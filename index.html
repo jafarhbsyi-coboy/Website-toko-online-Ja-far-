@@ -4,7 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Toko Online Ja'far - Belanja mudah dan pesan langsung melalui WhatsApp.">
+  <meta name="theme-color" content="#123c2b">
+
   <title>Toko Online Ja'far</title>
 
   <style>
@@ -15,23 +16,27 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #f5f7fa;
+      background: #f5f7f5;
       color: #222;
     }
 
     header {
-      background: #087f5b;
+      background: #123c2b;
       color: white;
-      padding: 24px 16px;
+      padding: 25px 15px;
       text-align: center;
     }
 
     header h1 {
-      margin: 0 0 8px;
+      margin: 0 0 10px;
+    }
+
+    header p {
+      margin: 0;
     }
 
     nav {
-      background: #066649;
+      background: #205b40;
       padding: 12px;
       text-align: center;
     }
@@ -39,88 +44,106 @@
     nav a {
       color: white;
       text-decoration: none;
-      margin: 0 10px;
+      margin: 0 12px;
       font-weight: bold;
     }
 
-    .container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 20px;
+    .hero {
+      text-align: center;
+      padding: 30px 15px;
     }
 
-    .produk-list {
+    .hero h2 {
+      color: #123c2b;
+    }
+
+    .produk-container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 10px 15px 35px;
       display: grid;
       grid-template-columns:
         repeat(auto-fit, minmax(220px, 1fr));
-      gap: 18px;
+      gap: 20px;
     }
 
     .produk {
       background: white;
       border-radius: 12px;
-      padding: 18px;
+      overflow: hidden;
       box-shadow: 0 3px 12px #00000012;
+      padding-bottom: 18px;
       text-align: center;
     }
 
-    .gambar-produk {
-      font-size: 65px;
-      margin: 12px 0;
-    }
-
-    .foto-produk {
+    .produk img {
+      display: block;
       width: 100%;
       height: 220px;
       object-fit: contain;
-      border-radius: 8px;
-      margin: 12px 0;
       background: #fff;
     }
 
+    .produk h3 {
+      margin: 15px 10px 8px;
+    }
+
+    .deskripsi {
+      padding: 0 12px;
+      color: #666;
+      font-size: 14px;
+      min-height: 35px;
+    }
+
     .harga {
-      color: #087f5b;
-      font-size: 20px;
+      font-size: 21px;
       font-weight: bold;
+      color: #167443;
+      margin: 14px 0;
     }
 
-    button, .tombol {
+    .tombol {
       display: inline-block;
-      border: none;
-      border-radius: 7px;
-      padding: 12px 16px;
-      background: #087f5b;
+      background: #167443;
       color: white;
-      font-size: 15px;
-      cursor: pointer;
+      padding: 12px 18px;
+      border-radius: 7px;
       text-decoration: none;
-      margin-top: 8px;
-    }
-
-    button:hover, .tombol:hover {
-      background: #066649;
-    }
-
-    .kontak {
-      background: white;
-      border-radius: 12px;
-      margin-top: 28px;
-      padding: 24px;
-      text-align: center;
-    }
-
-    .whatsapp {
-      background: #25d366;
-      color: #073b20;
       font-weight: bold;
+      margin: 5px;
+    }
+
+    .tombol:hover {
+      background: #105c33;
+    }
+
+    .unggulan {
+      border: 2px solid #167443;
+    }
+
+    .label {
+      display: inline-block;
+      background: #e2f5e8;
+      color: #126438;
+      padding: 6px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: bold;
+      margin-top: 12px;
+    }
+
+    #kontak {
+      background: #e6eee8;
+      padding: 30px 15px;
+      text-align: center;
     }
 
     footer {
-      margin-top: 30px;
-      background: #222;
+      background: #123c2b;
       color: white;
       text-align: center;
-      padding: 20px;
+      padding: 18px;
+      font-size: 13px;
     }
   </style>
 </head>
@@ -129,140 +152,107 @@
 
   <header>
     <h1>Toko Online Ja'far</h1>
-    <p>Belanja mudah, pesan langsung melalui WhatsApp!</p>
+    <p>Selamat datang di toko online kami!</p>
   </header>
 
   <nav>
+    <a href="#beranda">Beranda</a>
     <a href="#produk">Produk</a>
-    <a href="#kontak">Hubungi Kami</a>
+    <a href="#kontak">Kontak</a>
   </nav>
 
-  <main class="container">
-    <section id="produk">
-      <h2>Produk Kami</h2>
+  <section class="hero" id="beranda">
+    <h2>Belanja Mudah dan Praktis</h2>
+    <p>Pilih produk favorit kamu dan pesan melalui WhatsApp.</p>
+  </section>
 
-      <div class="produk-list">
+  <main class="produk-container" id="produk">
 
-        <!-- PRODUK LAMA 1 -->
-        <article class="produk">
-          <div class="gambar-produk">☕</div>
-          <h3>Kopi Jahe Ummi</h3>
-          <p>Minuman kopi jahe pilihan.</p>
-          <p class="harga">Rp5.000</p>
-
-          <button onclick="pesanWhatsApp(
-            'Kopi Jahe Ummi', 5000
-          )">
-            Pesan Sekarang
-          </button>
-        </article>
-
-        <!-- PRODUK LAMA 2 -->
-        <article class="produk">
-          <div class="gambar-produk">👕</div>
-          <h3>Pakaian Pilihan</h3>
-          <p>Pakaian nyaman untuk sehari-hari.</p>
-          <p class="harga">Rp50.000</p>
-
-          <button onclick="pesanWhatsApp(
-            'Pakaian Pilihan', 50000
-          )">
-            Pesan Sekarang
-          </button>
-        </article>
-
-        <!-- PRODUK LAMA 3 -->
-        <article class="produk">
-          <div class="gambar-produk">🛍️</div>
-          <h3>Produk Pilihan</h3>
-          <p>Hubungi kami untuk informasi produk.</p>
-          <p class="harga">Tanya harga</p>
-
-          <button onclick="pesanWhatsApp(
-            'Produk Pilihan', null
-          )">
-            Pesan Sekarang
-          </button>
-        </article>
-
-        <!-- PRODUK BARU: MINYAK WANGI MAHADIR -->
-        <article class="produk">
-          <img
-            class="foto-produk"
-            src="mahadir.jpg"
-            alt="Foto asli Minyak Wangi Mahadir"
-            onerror="this.alt='Foto Mahadir belum diunggah ke GitHub'; this.style.display='none';"
-          >
-
-          <h3>Minyak Wangi Mahadir</h3>
-
-          <p>
-            Minyak wangi non-alkohol,
-            ukuran 10 gram.
-          </p>
-
-          <p class="harga">Rp25.000 / botol</p>
-
-          <button onclick="pesanWhatsApp(
-            'Minyak Wangi Mahadir non-alkohol 10 gram',
-            25000
-          )">
-            Pesan Sekarang
-          </button>
-        </article>
-
-      </div>
-    </section>
-
-    <!-- KONTAK TOKO -->
-    <section id="kontak" class="kontak">
-      <h2>Hubungi Kami</h2>
-      <p>Ada pertanyaan atau ingin memesan produk?</p>
-      <p>Silakan hubungi Toko Online Ja'far.</p>
-
-      <a
-        class="tombol whatsapp"
-        href="https://wa.me/6281991391551?text=Halo%20Toko%20Online%20Ja%27far%2C%20saya%20ingin%20bertanya."
-        target="_blank"
-        rel="noopener noreferrer"
+    <!-- PRODUK LAMA 1 -->
+    <article class="produk">
+      <img
+        src="kopi-jahe-ummi.jpg"
+        alt="Kopi Jahe Ummi"
+        loading="lazy"
       >
-        Chat WhatsApp Sekarang
+      <h3>Kopi Jahe Ummi</h3>
+      <p class="deskripsi">Produk kopi jahe pilihan.</p>
+      <a class="tombol"
+         href="https://wa.me/6281991391551?text=Halo%2C%20saya%20ingin%20bertanya%20tentang%20Kopi%20Jahe%20Ummi">
+        Tanya Produk
       </a>
-    </section>
+    </article>
+
+    <!-- PRODUK LAMA 2 -->
+    <article class="produk">
+      <img
+        src="pakaian-pilihan.jpg"
+        alt="Pakaian Pilihan"
+        loading="lazy"
+      >
+      <h3>Pakaian Pilihan</h3>
+      <p class="deskripsi">Pilihan pakaian untuk kamu.</p>
+      <a class="tombol"
+         href="https://wa.me/6281991391551?text=Halo%2C%20saya%20ingin%20bertanya%20tentang%20Pakaian%20Pilihan">
+        Tanya Produk
+      </a>
+    </article>
+
+    <!-- PRODUK LAMA 3 -->
+    <article class="produk">
+      <img
+        src="produk-pilihan.jpg"
+        alt="Produk Pilihan"
+        loading="lazy"
+      >
+      <h3>Produk Pilihan</h3>
+      <p class="deskripsi">Produk pilihan dari toko kami.</p>
+      <a class="tombol"
+         href="https://wa.me/6281991391551?text=Halo%2C%20saya%20ingin%20bertanya%20tentang%20Produk%20Pilihan">
+        Tanya Produk
+      </a>
+    </article>
+
+    <!-- PRODUK BARU: MINYAK WANGI MAHADIR -->
+    <article class="produk unggulan">
+      <span class="label">Produk Baru</span>
+
+      <img
+        src="mahadir.jpg"
+        alt="Minyak Wangi Mahadir 10 gram"
+        loading="lazy"
+      >
+
+      <h3>Minyak Wangi Mahadir</h3>
+
+      <p class="deskripsi">
+        Minyak wangi non-alkohol, ukuran 10 gram.
+      </p>
+
+      <p class="harga">Rp25.000 / botol</p>
+
+      <a class="tombol"
+         href="https://wa.me/6281991391551?text=Halo%2C%20saya%20ingin%20memesan%20Minyak%20Wangi%20Mahadir%2010%20gram%20seharga%20Rp25.000%20per%20botol">
+        Pesan via WhatsApp
+      </a>
+    </article>
 
   </main>
 
+  <section id="kontak">
+    <h2>Hubungi Kami</h2>
+    <p>Untuk pertanyaan dan pemesanan produk:</p>
+    <p><strong>WhatsApp: 081991391551</strong></p>
+
+    <a class="tombol"
+       href="https://wa.me/6281991391551?text=Halo%20Toko%20Online%20Ja'far">
+      Chat WhatsApp
+    </a>
+  </section>
+
   <footer>
-    <p>&copy; <span id="tahun"></span> Toko Online Ja'far</p>
-    <p>Melayani pesanan melalui WhatsApp.</p>
+    <p>&copy; 2026 Toko Online Ja'far. Semua hak dilindungi.</p>
   </footer>
-
-  <script>
-    // Nomor WhatsApp pemilik toko
-    const nomorWhatsApp = "6281991391551";
-
-    function pesanWhatsApp(namaProduk, harga) {
-      let detailHarga = harga === null
-        ? "Mohon informasi harga"
-        : "Rp" + Number(harga).toLocaleString("id-ID");
-
-      const pesan =
-        "Halo Toko Online Ja'far!\n\n" +
-        "Saya ingin memesan produk:\n" +
-        "Nama produk: " + namaProduk + "\n" +
-        "Harga: " + detailHarga + "\n\n" +
-        "Apakah produk ini tersedia?";
-
-      const url =
-        "https://wa.me/" + nomorWhatsApp +
-        "?text=" + encodeURIComponent(pesan);
-
-      window.open(url, "_blank", "noopener,noreferrer");
-    }
-
-    document.getElementById("tahun").textContent =
-      new Date().getFullYear();
-  </script>
 
 </body>
 </html>
