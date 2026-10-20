@@ -69,6 +69,15 @@
       margin: 12px 0;
     }
 
+    .foto-produk {
+      width: 100%;
+      height: 220px;
+      object-fit: contain;
+      border-radius: 8px;
+      margin: 12px 0;
+      background: #fff;
+    }
+
     .harga {
       color: #087f5b;
       font-size: 20px;
@@ -129,12 +138,12 @@
   </nav>
 
   <main class="container">
-
     <section id="produk">
       <h2>Produk Kami</h2>
 
       <div class="produk-list">
 
+        <!-- PRODUK LAMA 1 -->
         <article class="produk">
           <div class="gambar-produk">☕</div>
           <h3>Kopi Jahe Ummi</h3>
@@ -142,13 +151,13 @@
           <p class="harga">Rp5.000</p>
 
           <button onclick="pesanWhatsApp(
-            'Kopi Jahe Ummi',
-            5000
+            'Kopi Jahe Ummi', 5000
           )">
             Pesan Sekarang
           </button>
         </article>
 
+        <!-- PRODUK LAMA 2 -->
         <article class="produk">
           <div class="gambar-produk">👕</div>
           <h3>Pakaian Pilihan</h3>
@@ -156,13 +165,13 @@
           <p class="harga">Rp50.000</p>
 
           <button onclick="pesanWhatsApp(
-            'Pakaian Pilihan',
-            50000
+            'Pakaian Pilihan', 50000
           )">
             Pesan Sekarang
           </button>
         </article>
 
+        <!-- PRODUK LAMA 3 -->
         <article class="produk">
           <div class="gambar-produk">🛍️</div>
           <h3>Produk Pilihan</h3>
@@ -170,8 +179,33 @@
           <p class="harga">Tanya harga</p>
 
           <button onclick="pesanWhatsApp(
-            'Produk Pilihan',
-            null
+            'Produk Pilihan', null
+          )">
+            Pesan Sekarang
+          </button>
+        </article>
+
+        <!-- PRODUK BARU: MINYAK WANGI MAHADIR -->
+        <article class="produk">
+          <img
+            class="foto-produk"
+            src="mahadir.jpg"
+            alt="Foto asli Minyak Wangi Mahadir"
+            onerror="this.alt='Foto Mahadir belum diunggah ke GitHub'; this.style.display='none';"
+          >
+
+          <h3>Minyak Wangi Mahadir</h3>
+
+          <p>
+            Minyak wangi non-alkohol,
+            ukuran 10 gram.
+          </p>
+
+          <p class="harga">Rp25.000 / botol</p>
+
+          <button onclick="pesanWhatsApp(
+            'Minyak Wangi Mahadir non-alkohol 10 gram',
+            25000
           )">
             Pesan Sekarang
           </button>
@@ -180,6 +214,7 @@
       </div>
     </section>
 
+    <!-- KONTAK TOKO -->
     <section id="kontak" class="kontak">
       <h2>Hubungi Kami</h2>
       <p>Ada pertanyaan atau ingin memesan produk?</p>
