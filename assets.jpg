@@ -1,0 +1,358 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toko Online Ja'far</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      color: #222;
+    }
+
+    header {
+      background: #111;
+      color: #e8c65a;
+      text-align: center;
+      padding: 25px 15px;
+    }
+
+    header h1 {
+      margin: 0 0 10px;
+    }
+
+    header p {
+      color: white;
+    }
+
+    nav {
+      background: #222;
+      text-align: center;
+      padding: 14px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav a {
+      color: #e8c65a;
+      text-decoration: none;
+      margin: 0 12px;
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    .produk-list {
+      display: grid;
+      grid-template-columns:
+        repeat(auto-fit, minmax(230px, 1fr));
+      gap: 20px;
+    }
+
+    .produk {
+      background: white;
+      padding: 18px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 3px 12px #00000015;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .gambar-produk {
+      width: 100%;
+      height: 250px;
+      object-fit: contain;
+      border-radius: 8px;
+      background: #f5f5f5;
+      margin: 10px 0;
+    }
+
+    .gambar-emoji {
+      font-size: 65px;
+      margin: 20px 0;
+    }
+
+    .harga {
+      color: #087f5b;
+      font-size: 21px;
+      font-weight: bold;
+    }
+
+    button,
+    .tombol {
+      display: inline-block;
+      background: #087f5b;
+      color: white;
+      border: none;
+      border-radius: 7px;
+      padding: 12px 16px;
+      font-size: 15px;
+      text-decoration: none;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button:hover,
+    .tombol:hover {
+      opacity: 0.85;
+    }
+
+    .produk button {
+      margin-top: auto;
+    }
+
+    /* Desain khusus produk Mahadir */
+    .mahadir {
+      background: #111;
+      color: white;
+      border: 2px solid #c8a747;
+    }
+
+    .mahadir .harga {
+      color: #e8c65a;
+    }
+
+    .label-mahadir {
+      color: #e8c65a;
+      border: 1px solid #c8a747;
+      padding: 8px 12px;
+      margin-bottom: 8px;
+      letter-spacing: 2px;
+      font-weight: bold;
+    }
+
+    .mahadir .gambar-produk {
+      background: #222;
+    }
+
+    .mahadir button {
+      background: #168b50;
+      width: 100%;
+    }
+
+    .mahadir details {
+      width: 100%;
+      margin-top: 15px;
+    }
+
+    .mahadir summary {
+      color: #e8c65a;
+      cursor: pointer;
+      padding: 10px;
+    }
+
+    .kontak {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    .whatsapp {
+      background: #25d366;
+      color: #073b20;
+      font-weight: bold;
+    }
+
+    footer {
+      margin-top: 30px;
+      padding: 20px;
+      background: #111;
+      color: white;
+      text-align: center;
+    }
+
+    @media (max-width: 480px) {
+      nav a {
+        margin: 0 6px;
+        font-size: 14px;
+      }
+
+      .container {
+        padding: 12px;
+      }
+
+      .gambar-produk {
+        height: 220px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Toko Online Ja'far</h1>
+    <p>Belanja mudah dan pesan langsung melalui WhatsApp!</p>
+  </header>
+
+  <nav>
+    <a href="#produk">Produk</a>
+    <a href="#kontak">Kontak</a>
+  </nav>
+
+  <main class="container">
+
+    <section id="produk">
+      <h2>Produk Kami</h2>
+
+      <div class="produk-list">
+
+        <!-- PRODUK LAMA: KOPI JAHE -->
+        <article class="produk">
+          <div class="gambar-emoji">☕</div>
+          <h3>Kopi Jahe Ummi</h3>
+          <p>Minuman kopi jahe pilihan.</p>
+          <p class="harga">Rp5.000</p>
+
+          <button onclick="pesanWhatsApp(
+            'Kopi Jahe Ummi', 5000
+          )">
+            Pesan Sekarang
+          </button>
+        </article>
+
+        <!-- PRODUK LAMA: PAKAIAN -->
+        <article class="produk">
+          <div class="gambar-emoji">👕</div>
+          <h3>Pakaian Pilihan</h3>
+          <p>Pakaian nyaman untuk sehari-hari.</p>
+          <p class="harga">Rp50.000</p>
+
+          <button onclick="pesanWhatsApp(
+            'Pakaian Pilihan', 50000
+          )">
+            Pesan Sekarang
+          </button>
+        </article>
+
+        <!-- PRODUK MAHADIR DENGAN FOTO ASLI -->
+        <article class="produk mahadir">
+
+          <span class="label-mahadir">
+            MAHADIR PERFUME
+          </span>
+
+          <img
+            class="gambar-produk"
+            src="assets/mahadir-produk.jpg"
+            alt="Foto asli produk minyak wangi Mahadir"
+            loading="lazy"
+          >
+
+          <h3>Minyak Wangi Mahadir</h3>
+
+          <p>
+            Parfum Mahadir dengan kemasan hitam
+            dan aksen emas.
+          </p>
+
+          <p class="harga">
+            Rp25.000 / botol
+          </p>
+
+          <button onclick="pesanWhatsApp(
+            'Minyak Wangi Mahadir', 25000
+          )">
+            Pesan via WhatsApp
+          </button>
+
+          <details>
+            <summary>Lihat foto kemasan Mahadir</summary>
+
+            <img
+              class="gambar-produk"
+              src="assets/mahadir-kemasan.jpg"
+              alt="Foto asli kotak kemasan Mahadir Perfume"
+              loading="lazy"
+            >
+          </details>
+
+        </article>
+
+      </div>
+    </section>
+
+    <!-- KONTAK TOKO -->
+    <section id="kontak" class="kontak">
+      <h2>Hubungi Toko Online Ja'far</h2>
+
+      <p>
+        Ingin bertanya atau memesan produk?
+        Silakan hubungi kami.
+      </p>
+
+      <p><strong>WhatsApp: 081991391551</strong></p>
+
+      <a
+        class="tombol whatsapp"
+        href="https://wa.me/6281991391551?text=Halo%20Toko%20Online%20Ja%27far%2C%20saya%20ingin%20bertanya."
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Chat WhatsApp
+      </a>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>
+      &copy; <span id="tahun"></span>
+      Toko Online Ja'far
+    </p>
+    <p>Terima kasih sudah berbelanja!</p>
+  </footer>
+
+  <script>
+    // Nomor WhatsApp pemilik toko
+    const nomorWhatsApp = "6281991391551";
+
+    function pesanWhatsApp(namaProduk, harga) {
+      const hargaProduk =
+        "Rp" + Number(harga).toLocaleString("id-ID");
+
+      const pesan =
+        "Halo Toko Online Ja'far!\n\n" +
+        "Saya ingin memesan produk:\n" +
+        "Nama produk: " + namaProduk + "\n" +
+        "Harga: " + hargaProduk + "\n\n" +
+        "Apakah produk ini tersedia?";
+
+      const url =
+        "https://wa.me/" + nomorWhatsApp +
+        "?text=" + encodeURIComponent(pesan);
+
+      window.open(url, "_blank");
+    }
+
+    document.getElementById("tahun").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
