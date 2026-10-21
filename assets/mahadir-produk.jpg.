@@ -1,2 +1,6 @@
-assets/mahadir-produk.jpg
-assets/mahadir-kemasan.jpg
+<img
+  src="./assets/Mahadir.jpg"
+  alt="Minyak Wangi Mahadir"
+  width="200"
+  loading="eager"
+>
