@@ -4,272 +4,338 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Zeinshop313 - Toko Belanja Hemat</title>
+<meta name="theme-color" content="#e8edcf">
+<title>Zeinshop313 - Toko Online</title>
 
 <style>
 *{box-sizing:border-box}
 body{
-  margin:0;font-family:Arial,sans-serif;
-  background:#f0f4df;color:#222
+ margin:0;font-family:Arial,sans-serif;
+ background:#f0f4df;color:#26352b
 }
 .berjalan{
-  overflow:hidden;white-space:nowrap;
-  background:#087f5b;color:#fff;
-  padding:13px 0;font-weight:bold
+ overflow:hidden;white-space:nowrap;
+ background:#087f5b;color:#fff;
+ padding:14px 0;font-weight:bold
 }
 .berjalan span{
-  display:inline-block;padding-left:100%;
-  animation jalan 18s linear infinite
+ display:inline-block;padding-left:100%;
+ animation:jalan 18s linear infinite
 }
 @keyframes jalan{
-  from{transform:translateX(0)}
-  to{transform:translateX(-100%)}
+ 0%{transform:translateX(0)}
+ 100%{transform:translateX(-100%)}
 }
 header{
-  text-align:center;padding:22px 12px;
-  background:#e8edcf
+ text-align:center;padding:24px 12px;
+ background:#e8edcf;border-bottom:3px solid #d9e2b9
 }
-header h1{color:#ff8500;margin:5px 0}
-header p{margin-bottom:0}
-.judul{text-align:center;margin:25px 10px 10px}
+header h1{
+ color:#ff8500;margin:6px 0;font-size:clamp(24px,5vw,34px)
+}
+header p{margin:8px 0}
+.judul{text-align:center;margin:25px 8px 10px}
+.info{text-align:center;padding:0 12px;color:#526252}
 .produk-list{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:18px;max-width:950px;padding:15px;margin:auto
+ display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+ gap:18px;max-width:950px;margin:auto;padding:15px
 }
 .produk{
-  background:white;border-radius:14px;overflow:hidden;
-  box-shadow:0 3px 12px #0002;text-align:center;
-  padding-bottom:18px
+ background:white;border-radius:14px;overflow:hidden;
+ box-shadow:0 3px 12px #0002;text-align:center;
+ padding-bottom:18px
 }
 .gambar-produk{
-  height:230px;padding:10px;background:#fff
+ height:230px;padding:10px;background:#fff
 }
 .gambar-produk img{
-  width:100%;height:100%;object-fit:contain
+ width:100%;height:100%;object-fit:contain
 }
 .produk h3{margin:12px 8px}
-.deskripsi{padding:0 12px;color:#666;font-size:14px}
+.deskripsi{padding:0 12px;color:#667064;font-size:14px;line-height:1.5}
 .harga{font-size:20px;font-weight:bold;color:#087f5b}
 button,.tombol{
-  border:0;display:inline-block;background:#087f5b;
-  color:white;text-decoration:none;padding:11px 16px;
-  border-radius:8px;font-weight:bold;cursor:pointer;margin:4px
+ border:0;display:inline-block;background:#087f5b;color:white;
+ text-decoration:none;padding:11px 15px;border-radius:8px;
+ font-weight:bold;cursor:pointer;margin:4px;font-size:14px
 }
 button:hover,.tombol:hover{background:#056344}
+button:focus-visible,a:focus-visible,input:focus-visible,
+textarea:focus-visible,select:focus-visible{
+ outline:3px solid #ff8500;outline-offset:2px
+}
 .keranjang,.kontak{
-  background:white;border-radius:12px;padding:18px;
-  margin:18px auto;max-width:900px;width:calc(100% - 24px)
+ background:#fff;border-radius:12px;padding:18px;
+ margin:18px auto;max-width:900px;width:calc(100% - 24px);
+ box-shadow:0 2px 8px #0001
 }
-.item-keranjang{
-  border-bottom:1px solid #ddd;padding:12px 0
-}
+.item-keranjang{border-bottom:1px solid #ddd;padding:12px 0;line-height:1.8}
 .item-keranjang button{padding:6px 11px}
-.total{font-size:20px;font-weight:bold;color:#087f5b}
+.total{font-size:21px;font-weight:bold;color:#087f5b}
+label{display:block;font-weight:bold;margin-top:9px}
 form input,form select,form textarea{
-  width:100%;padding:11px;margin:6px 0 12px;
-  border:1px solid #ccc;border-radius:7px;font:inherit
+ width:100%;padding:12px;margin:6px 0 12px;
+ border:1px solid #ccc;border-radius:7px;font:inherit;background:white
 }
 footer{
-  background:#173b30;color:white;text-align:center;
-  padding:18px;font-size:13px
+ background:#173b30;color:white;text-align:center;
+ padding:18px;font-size:13px;margin-top:25px
 }
+.catatan{font-size:13px;color:#666;line-height:1.6}
 </style>
 </head>
-
 <body>
 
 <div class="berjalan">
-<span>Selamat datang, Ahlan wa Sahlan di Toko Online
-Zeinshop313 — Belanja Hemat, Mudah dan Praktis!</span>
+ <span>🌿 Selamat Datang di Toko Online Zeinshop313 —
+ Belanja Hemat, Mudah dan Praktis! 🛍️</span>
 </div>
 
 <header>
-<h1>Selamat Datang di Toko Online Zeinshop313</h1>
-<p>Toko Belanja Hemat Anda</p>
-<p>Belanja mudah, pesan langsung melalui WhatsApp</p>
+ <h1>Zeinshop313</h1>
+ <p><strong>Toko Online Pilihan Anda</strong></p>
+ <p>Belanja mudah, pesan langsung melalui WhatsApp.</p>
 </header>
 
-<h2 class="judul">Produk Pilihan Kami</h2>
+<h2 class="judul">🛍️ Produk Pilihan Kami</h2>
+<p class="info">Pilih produk, masukkan ke keranjang, lalu checkout.</p>
 
 <main class="produk-list">
 
-<article class="produk">
-<div class="gambar-produk">
-<img src="assets/KopiJahe.jpg"
-alt="Kopi Jahe Sachet Ummi"
-onerror="this.onerror=null;this.src='https://placehold.co/500x400/f7f0df/6b4423?text=Kopi+Jahe+Ummi'">
-</div>
-<h3>Kopi Jahe Sachet Ummi</h3>
-<p class="deskripsi">Kopi jahe sachet untuk menemani waktu santai Anda.</p>
-<p class="harga" id="harga-kopi">Rp0</p>
-<button onclick="ubahHarga('kopi')">Atur Harga Kopi</button>
-<br>
-<button onclick="tambah('kopi')">🛒 Tambah ke Keranjang</button>
-</article>
+ <article class="produk">
+  <div class="gambar-produk">
+   <img
+    src="assets/KopiJahe.jpg"
+    alt="Kopi Jahe Sachet Ummi"
+    onerror="this.onerror=null;this.src='https://placehold.co/600x450/F7F0DF/704B31?text=Kopi+Jahe+Ummi'">
+  </div>
+  <h3>Kopi Jahe Sachet Ummi</h3>
+  <p class="deskripsi">Kopi jahe sachet untuk menemani waktu santai Anda.</p>
+  <p class="harga" id="harga-kopi">Harga belum ditentukan</p>
+  <button type="button" onclick="aturHargaKopi()">Atur Harga Kopi</button>
+  <br>
+  <button type="button" onclick="tambah('kopi')">🛒 Tambah ke Keranjang</button>
+ </article>
 
-<article class="produk">
-<div class="gambar-produk">
-<img src="assets/Mahadir.jpg"
-alt="Minyak Wangi Mahadir"
-onerror="this.onerror=null;this.src='https://placehold.co/500x400/f5eee5/704b31?text=Minyak+Wangi+Mahadir'">
-</div>
-<h3>Minyak Wangi Mahadir</h3>
-<p class="deskripsi">Minyak wangi pilihan untuk menemani aktivitas Anda.</p>
-<p class="harga">Rp25.000 / botol</p>
-<button onclick="tambah('mahadir')">🛒 Tambah ke Keranjang</button>
-</article>
+ <article class="produk">
+  <div class="gambar-produk">
+   <img
+    src="assets/Mahadir.jpg"
+    alt="Minyak Wangi Mahadir"
+    onerror="this.onerror=null;this.src='https://placehold.co/600x450/F5EEE5/704B31?text=Minyak+Wangi+Mahadir'">
+  </div>
+  <h3>Minyak Wangi Mahadir</h3>
+  <p class="deskripsi">Minyak wangi pilihan untuk menemani aktivitas Anda.</p>
+  <p class="harga" id="harga-mahadir">Rp25.000</p>
+  <button type="button" onclick="tambah('mahadir')">🛒 Tambah ke Keranjang</button>
+ </article>
 
 </main>
 
 <section class="keranjang" id="keranjang">
-<h2>🛒 Keranjang Belanja (<span id="jumlah">0</span>)</h2>
-<div id="daftar">Keranjang Anda masih kosong.</div>
-<p class="total">Total: <span id="total">Rp0</span></p>
-<button onclick="kosongkan()">Kosongkan Keranjang</button>
+ <h2>🛒 Keranjang Belanja (<span id="jumlah">0</span>)</h2>
+ <div id="daftar">Keranjang Anda masih kosong.</div>
+ <p class="total">Total belanja: <span id="total">Rp0</span></p>
+ <button type="button" onclick="kosongkan()">Kosongkan Keranjang</button>
 </section>
 
 <section class="kontak">
-<h2>Checkout Pesanan</h2>
-<p>Isi data pengiriman, lalu tekan tombol checkout WhatsApp.</p>
+ <h2>📦 Checkout Pesanan</h2>
+ <p>Isi data berikut. Pesanan akan dikirim ke WhatsApp penjual.</p>
 
-<form id="formPesanan">
-<label>Nama pembeli</label>
-<input id="nama" required placeholder="Nama lengkap">
+ <form id="formPesanan">
+  <label for="nama">Nama pembeli</label>
+  <input id="nama" required maxlength="100" placeholder="Nama lengkap">
 
-<label>Nomor HP pembeli</label>
-<input id="hp" required type="tel" placeholder="Nomor HP aktif">
+  <label for="hp">Nomor HP pembeli</label>
+  <input id="hp" required type="tel" maxlength="25"
+   placeholder="Nomor HP aktif">
 
-<label>Alamat lengkap pengiriman</label>
-<textarea id="alamat" required rows="3"
-placeholder="Jalan, desa, kecamatan, kota, kode pos"></textarea>
+  <label for="alamat">Alamat lengkap pengiriman</label>
+  <textarea id="alamat" required maxlength="700" rows="3"
+   placeholder="Jalan, desa, kecamatan, kota, kode pos"></textarea>
 
-<label>Jasa pengiriman</label>
-<select id="kurir" required>
-<option value="">Pilih jasa pengiriman</option>
-<option>JNE (konfirmasi ketersediaan)</option>
-<option>J&T Express (konfirmasi ketersediaan)</option>
-<option>SiCepat (konfirmasi ketersediaan)</option>
-<option>Pos Indonesia (konfirmasi ketersediaan)</option>
-<option>Kurir lokal</option>
-<option>Kesepakatan dengan penjual</option>
-</select>
+  <label for="kurir">Jasa pengiriman</label>
+  <select id="kurir" required>
+   <option value="">Pilih jasa pengiriman</option>
+   <option>JNE - konfirmasi ketersediaan</option>
+   <option>J&T Express - konfirmasi ketersediaan</option>
+   <option>SiCepat - konfirmasi ketersediaan</option>
+   <option>Pos Indonesia - konfirmasi ketersediaan</option>
+   <option>Kurir lokal</option>
+   <option>Kesepakatan dengan penjual</option>
+  </select>
 
-<label>Metode pembayaran</label>
-<select id="bayar" required>
-<option value="COD (bayar saat barang diterima)">COD (bayar di tempat)</option>
-<option value="Transfer (konfirmasi dengan penjual)">Transfer (konfirmasi dengan penjual)</option>
-</select>
+  <label for="bayar">Metode pembayaran</label>
+  <select id="bayar" required>
+   <option value="COD (bayar saat barang diterima)">COD - bayar saat barang diterima</option>
+   <option value="Transfer - tunggu konfirmasi penjual">Transfer - konfirmasi penjual dahulu</option>
+  </select>
 
-<button type="submit">✅ Checkout via WhatsApp</button>
-</form>
+  <button type="submit">✅ Checkout via WhatsApp</button>
+ </form>
 
-<p>WhatsApp toko: 081991391551</p>
-<a class="tombol" href="https://wa.me/6281991391551"
-target="_blank" rel="noopener">Hubungi Penjual</a>
+ <p>WhatsApp toko: 081991391551</p>
+ <a class="tombol" href="https://wa.me/6281991391551"
+  target="_blank" rel="noopener">Hubungi Penjual</a>
+ <p class="catatan">
+  Ongkos kirim, ketersediaan kurir, dan metode pembayaran perlu
+  dikonfirmasi dengan penjual. Website ini belum memproses pembayaran
+  atau pemesanan kurir secara otomatis.
+ </p>
 </section>
 
 <footer>
-<p>© 2026 Zeinshop313. Terima kasih telah berbelanja.</p>
+ <p>© 2026 Zeinshop313</p>
+ <p>Terima kasih telah berbelanja di toko kami.</p>
 </footer>
 
 <script>
-const produk={
- kopi:{nama:"Kopi Jahe Sachet Ummi",harga:0},
- mahadir:{nama:"Minyak Wangi Mahadir",harga:25000}
-};
-const keranjang={};
+"use strict";
 
-function rupiah(n){
- return "Rp"+n.toLocaleString("id-ID");
+const produk = {
+ kopi: {nama:"Kopi Jahe Sachet Ummi", harga:0},
+ mahadir: {nama:"Minyak Wangi Mahadir", harga:25000}
+};
+
+const keranjang = Object.create(null);
+
+function rupiah(n) {
+ return "Rp" + n.toLocaleString("id-ID");
 }
-function ubahHarga(id){
- const masukan=prompt("Masukkan harga "+produk[id].nama+" dalam rupiah:");
- if(masukan===null)return;
- const harga=Number(masukan);
- if(!Number.isFinite(harga)||harga<=0){
-  alert("Masukkan harga yang benar.");
+
+function aturHargaKopi() {
+ const masukan = prompt("Masukkan harga kopi dalam rupiah, contoh 15000:");
+ if (masukan === null) return;
+
+ const harga = Number(masukan);
+ if (!Number.isSafeInteger(harga) || harga <= 0) {
+  alert("Masukkan harga berupa angka positif yang benar.");
   return;
  }
- produk[id].harga=harga;
- document.getElementById("harga-kopi").textContent=rupiah(harga);
- gambarUlang();
-}
-function gambarUlang(){
+
+ produk.kopi.harga = harga;
+ document.getElementById("harga-kopi").textContent = rupiah(harga);
  render();
 }
-function tambah(id){
- if(produk[id].harga<=0){
-  alert("Silakan atur harga kopi terlebih dahulu.");
+
+function tambah(id) {
+ if (!produk[id] || produk[id].harga <= 0) {
+  alert("Atur harga kopi terlebih dahulu sebelum membeli.");
   return;
  }
- keranjang[id]=(keranjang[id]||0)+1;
+ keranjang[id] = (keranjang[id] || 0) + 1;
+ render();
+ document.getElementById("keranjang").scrollIntoView({
+  behavior:"smooth", block:"nearest"
+ });
+}
+
+function ubahJumlah(id, selisih) {
+ if (!keranjang[id]) return;
+ keranjang[id] += selisih;
+ if (keranjang[id] <= 0) delete keranjang[id];
  render();
 }
-function ubahJumlah(id,selisih){
- keranjang[id]=(keranjang[id]||0)+selisih;
- if(keranjang[id]<=0)delete keranjang[id];
+
+function kosongkan() {
+ Object.keys(keranjang).forEach(id => delete keranjang[id]);
  render();
 }
-function kosongkan(){
- for(const id in keranjang)delete keranjang[id];
- render();
-}
-function render(){
- const daftar=document.getElementById("daftar");
- let jumlah=0,total=0,html="";
- for(const id in keranjang){
-  const q=keranjang[id];
-  jumlah+=q;
-  total+=q*produk[id].harga;
-  html+=`<div class="item-keranjang">
-  <strong>${produk[id].nama}</strong><br>
-  ${rupiah(produk[id].harga)} × ${q}<br>
-  <button onclick="ubahJumlah('${id}',-1)">−</button>
-  <button onclick="ubahJumlah('${id}',1)">+</button>
-  <button onclick="ubahJumlah('${id}',-${q})">Hapus</button>
-  </div>`;
+
+function render() {
+ const daftar = document.getElementById("daftar");
+ let jumlah = 0;
+ let total = 0;
+ daftar.replaceChildren();
+
+ Object.keys(keranjang).forEach(id => {
+  const q = keranjang[id];
+  const subtotal = q * produk[id].harga;
+  jumlah += q;
+  total += subtotal;
+
+  const item = document.createElement("div");
+  item.className = "item-keranjang";
+
+  const nama = document.createElement("strong");
+  nama.textContent = produk[id].nama;
+
+  const rincian = document.createElement("div");
+  rincian.textContent = rupiah(produk[id].harga) + " × " + q +
+   " = " + rupiah(subtotal);
+
+  item.append(nama, rincian);
+
+  [
+   ["−", -1, "Kurangi jumlah"],
+   ["+", 1, "Tambah jumlah"],
+   ["Hapus", -q, "Hapus produk"]
+  ].forEach(([label, nilai, keterangan]) => {
+   const btn = document.createElement("button");
+   btn.type = "button";
+   btn.textContent = label;
+   btn.setAttribute("aria-label", keterangan + " " + produk[id].nama);
+   btn.addEventListener("click", () => ubahJumlah(id, nilai));
+   item.appendChild(btn);
+  });
+
+  daftar.appendChild(item);
+ });
+
+ if (jumlah === 0) {
+  daftar.textContent = "Keranjang Anda masih kosong.";
  }
- daftar.innerHTML=html||"Keranjang Anda masih kosong.";
- document.getElementById("jumlah").textContent=jumlah;
- document.getElementById("total").textContent=rupiah(total);
+
+ document.getElementById("jumlah").textContent = jumlah;
+ document.getElementById("total").textContent = rupiah(total);
 }
-document.getElementById("formPesanan").addEventListener("submit",function(e){
+
+document.getElementById("formPesanan").addEventListener("submit", function(e) {
  e.preventDefault();
- if(!Object.keys(keranjang).length){
+
+ if (Object.keys(keranjang).length === 0) {
   alert("Keranjang masih kosong. Tambahkan produk terlebih dahulu.");
   return;
  }
- const nama=document.getElementById("nama").value.trim();
- const hp=document.getElementById("hp").value.trim();
- const alamat=document.getElementById("alamat").value.trim();
- const kurir=document.getElementById("kurir").value;
- const bayar=document.getElementById("bayar").value;
- let total=0,baris=[];
- for(const id in keranjang){
-  const q=keranjang[id];
-  const subtotal=q*produk[id].harga;
-  total+=subtotal;
-  baris.push("- "+produk[id].nama+" x "+q+
-  " = "+rupiah(subtotal));
- }
- const pesan=
- "PESANAN ZEINSHOP313\n\n"+
- "Nama: "+nama+"\n"+
- "HP pembeli: "+hp+"\n"+
- "Alamat: "+alamat+"\n\n"+
- "Detail barang:\n"+baris.join("\n")+
- "\n\nTotal barang: "+
- Object.values(keranjang).reduce((a,b)=>a+b,0)+
- "\nTotal harga produk: "+rupiah(total)+
- "\nJasa pengiriman: "+kurir+
- "\nPembayaran: "+bayar+
- "\n\nMohon konfirmasi ongkir, ketersediaan kurir, dan pesanan. "+
- "Saya menunggu konfirmasi penjual.";
- const url="https://wa.me/6281991391551?text="+
- encodeURIComponent(pesan);
- window.open(url,"_blank");
+
+ const nama = document.getElementById("nama").value.trim();
+ const hp = document.getElementById("hp").value.trim();
+ const alamat = document.getElementById("alamat").value.trim();
+ const kurir = document.getElementById("kurir").value;
+ const bayar = document.getElementById("bayar").value;
+
+ let total = 0;
+ let jumlah = 0;
+ const rincian = [];
+
+ Object.keys(keranjang).forEach(id => {
+  const q = keranjang[id];
+  const subtotal = q * produk[id].harga;
+  jumlah += q;
+  total += subtotal;
+  rincian.push("- " + produk[id].nama + " x " + q +
+   " = " + rupiah(subtotal));
+ });
+
+ const pesan =
+  "PESANAN ZEINSHOP313\n\n" +
+  "Nama: " + nama + "\n" +
+  "HP pembeli: " + hp + "\n" +
+  "Alamat: " + alamat + "\n\n" +
+  "Rincian barang:\n" + rincian.join("\n") + "\n\n" +
+  "Jumlah barang: " + jumlah + "\n" +
+  "Total harga produk: " + rupiah(total) + "\n" +
+  "Jasa pengiriman: " + kurir + "\n" +
+  "Pembayaran: " + bayar + "\n\n" +
+  "Mohon konfirmasi stok, ongkos kirim, dan pesanan saya.";
+
+ const url = "https://wa.me/6281991391551?text=" +
+  encodeURIComponent(pesan);
+
+ window.open(url, "_blank");
 });
+
 render();
 </script>
 </body>
