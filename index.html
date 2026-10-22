@@ -4,8 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zeinshop313 - Toko Belanja Hemat</title>
 
-  <title>Zeinshop313 - Toko Online</title>
+  <meta name="description" content="Selamat datang di Zeinshop313. Belanja apapun jadi hemat.">
 
   <style>
     * {
@@ -15,114 +16,170 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #f5f5f5;
+      background: #F0F5E6;
+      color: #222;
     }
 
-    /* HEADER TOKO */
-    .header-toko {
+    /* Tulisan berjalan di bagian atas */
+    .running-banner {
       width: 100%;
-      background-color: #ffffff;
-      padding: 22px 0;
       overflow: hidden;
-      border-bottom: 3px solid #ff9800;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+      background: #800080;
+      color: #FF8C00;
+      padding: 15px 0;
+      white-space: nowrap;
     }
 
-    .teks-berjalan {
+    .running-text {
       display: inline-block;
-      white-space: nowrap;
-      color: #ff8000;
-      font-size: 25px;
+      padding-left: 100%;
+      animation: berjalan 25s linear infinite;
+      font-size: 17px;
       font-weight: bold;
-      animation: berjalan 16s linear infinite;
     }
 
     @keyframes berjalan {
-      0% {
-        transform: translateX(100vw);
+      from {
+        transform: translateX(0);
       }
-      100% {
+      to {
         transform: translateX(-100%);
       }
     }
 
-    /* JUDUL TOKO */
-    .judul-toko {
+    /* Header ungu dengan tulisan oranye */
+    header {
+      background: #800080;
+      color: #FF8C00;
       text-align: center;
-      background-color: #ffffff;
-      padding: 20px 10px;
+      padding: 25px 15px;
     }
 
-    .judul-toko h1 {
-      color: #ff8000;
-      margin: 0;
-      font-size: 28px;
+    header h1 {
+      color: #FF8C00;
+      margin: 0 0 10px;
+      font-size: 30px;
     }
 
-    .judul-toko p {
-      color: #555555;
-      margin-top: 8px;
+    header p {
+      color: #FF8C00;
+      margin: 0 0 5px;
+      font-size: 15px;
     }
 
-    /* AREA PRODUK */
+    .judul-produk {
+      text-align: center;
+      margin: 28px 10px 20px;
+      color: #075e36;
+    }
+
     .produk-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 15px;
-      padding: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 15px;
     }
 
     .produk {
-      width: 100%;
-      max-width: 320px;
       background: white;
-      padding: 15px;
-      border-radius: 10px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
       text-align: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding-bottom: 18px;
     }
 
     .produk img {
       width: 100%;
-      max-height: 240px;
+      height: 190px;
       object-fit: contain;
-      border-radius: 8px;
+      background: #fff;
+      display: block;
+      padding: 8px;
     }
 
-    .produk h2 {
-      color: #333333;
+    .produk h3 {
+      font-size: 17px;
+      margin: 12px 5px 8px;
     }
 
-    .produk p {
-      color: #666666;
+    .harga {
+      color: #d62828;
+      font-size: 18px;
+      font-weight: bold;
+      margin: 8px 0 15px;
     }
 
     .tombol-wa {
       display: inline-block;
       background: #25d366;
-      color: white;
+      color: #073b20;
       text-decoration: none;
-      padding: 10px 18px;
-      border-radius: 6px;
+      padding: 11px 15px;
+      border-radius: 7px;
       font-weight: bold;
+      font-size: 14px;
+    }
+
+    .tombol-wa:hover {
+      background: #1fba59;
+    }
+
+    .tentang {
+      text-align: center;
+      padding: 25px 15px;
+      margin-top: 15px;
+      background: #e6f4eb;
+      line-height: 1.7;
     }
 
     footer {
-      background: white;
       text-align: center;
-      padding: 18px;
-      color: #666666;
-      margin-top: 20px;
+      padding: 18px 10px;
+      background: #800080;
+      color: #FF8C00;
+      font-size: 13px;
     }
 
     @media (max-width: 480px) {
-      .teks-berjalan {
-        font-size: 21px;
+      .produk-container {
+        gap: 10px;
+        padding: 10px;
       }
 
-      .judul-toko h1 {
-        font-size: 24px;
+      .produk img {
+        height: 145px;
+      }
+
+      .produk h3 {
+        font-size: 15px;
+      }
+
+      .harga {
+        font-size: 16px;
+      }
+
+      .tombol-wa {
+        padding: 10px 8px;
+        font-size: 12px;
+      }
+
+      header h1 {
+        font-size: 26px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .running-text {
+        animation: none;
+        padding-left: 10px;
+        white-space: normal;
+      }
+
+      .running-banner {
+        white-space: normal;
       }
     }
   </style>
@@ -130,61 +187,87 @@
 
 <body>
 
-  <!-- HEADER PUTIH DENGAN TULISAN ORANYE BERJALAN -->
-  <header class="header-toko">
-    <div class="teks-berjalan">
-      Selamat datang di Toko Online Zeinshop313
+  <!-- Tulisan berjalan -->
+  <div class="running-banner">
+    <div class="running-text">
+      Selamat datang, ahlan wa Sahlan Di Toko Belanja Hemat Anda "Zeinshop313" Semoga Semua Berkah
+      &nbsp;&nbsp;&nbsp;
     </div>
+  </div>
+
+  <!-- Header toko -->
+  <header>
+    <h1>Zeinshop313</h1>
+    <p>Toko Belanja Hemat Anda</p>
+    <p>Belanja mudah, hemat, dan praktis!</p>
   </header>
 
-  <!-- NAMA TOKO -->
-  <section class="judul-toko">
-    <h1>Zeinshop313</h1>
-    <p>Ahlan wa Sahlan! Selamat Berbelanja</p>
-  </section>
+  <h2 class="judul-produk">Produk Pilihan Kami</h2>
 
-  <!-- PRODUK TOKO -->
+  <!-- Produk toko -->
   <main class="produk-container">
 
-    <!-- Ganti alamat gambar dengan file gambar produk
-         yang benar-benar sudah diunggah ke GitHub. -->
-
-    <div class="produk">
+    <!-- Produk 1: Minyak Wangi Mahadir -->
+    <article class="produk">
       <img
-        src="assets/kopi-jahe.jpg"
-        alt="Kopi Jahe Sachet Ummi"
-        loading="eager"
-      >
-      <h2>Kopi Jahe Sachet Ummi</h2>
-      <p>Silakan hubungi kami untuk informasi harga.</p>
-      <a
-        class="tombol-wa"
-        href="https://wa.me/6281991391551"
-        target="_blank"
-        rel="noopener"
-      >Pesan via WhatsApp</a>
-    </div>
-
-    <div class="produk">
-      <img
-        src="assets/minyak-wangi-mahadir.jpg"
+        src="assets/Mahadir.jpg"
         alt="Minyak Wangi Mahadir"
         loading="eager"
+        onerror="this.onerror=null;this.src='https://placehold.co/400x400?text=Minyak+Wangi+Mahadir';"
       >
-      <h2>Minyak Wangi Mahadir</h2>
-      <p>Silakan hubungi kami untuk informasi harga.</p>
+
+      <h3>Minyak Wangi Mahadir</h3>
+      <p class="harga">Rp25.000 / botol</p>
+
       <a
         class="tombol-wa"
-        href="https://wa.me/6281991391551"
+        href="https://wa.me/6281991391551?text=Halo%20Zeinshop313%2C%20saya%20ingin%20memesan%20Minyak%20Wangi%20Mahadir."
         target="_blank"
-        rel="noopener"
-      >Pesan via WhatsApp</a>
-    </div>
+        rel="noopener noreferrer"
+      >
+        Pesan via WhatsApp
+      </a>
+    </article>
+
+    <!-- Produk 2: Kopi Jahe -->
+    <article class="produk">
+      <img
+        src="assets/KopiJahe.jpg"
+        alt="Kopi Jahe"
+        loading="eager"
+        onerror="this.onerror=null;this.src='https://placehold.co/400x400?text=Kopi+Jahe';"
+      >
+
+      <h3>Kopi Jahe</h3>
+      <p class="harga">Harga hubungi penjual</p>
+
+      <a
+        class="tombol-wa"
+        href="https://wa.me/6281991391551?text=Halo%20Zeinshop313%2C%20saya%20ingin%20mengetahui%20harga%20Kopi%20Jahe."
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Tanya Harga
+      </a>
+    </article>
 
   </main>
 
+  <!-- Informasi toko -->
+  <section class="tentang">
+    <h2>Belanja Hemat di Zeinshop313</h2>
+    <p>
+      Terima kasih telah berkunjung ke toko kami.
+      Silakan hubungi kami melalui WhatsApp untuk
+      informasi produk dan pemesanan.
+    </p>
+    <p>
+      <strong>WhatsApp:</strong> 081991391551
+    </p>
+  </section>
+
   <footer>
-    &copy; 2026 Zeinshop313. Selamat Berbelanja!
+    &copy; 2026 Zeinshop313. Semua Hak Dilindungi.
   </footer>
 
 </body>
