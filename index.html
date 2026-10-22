@@ -4,8 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zeinshop313 - Toko Belanja Hemat</title>
-  <meta name="description" content="Belanja Kopi Jahe Ummi dan Minyak Wangi Mahadir di Zeinshop313.">
+  <meta name="theme-color" content="#075c42">
+  <meta name="description" content="Zeinshop313 - Toko Belanja Hemat Anda. Pesan produk melalui WhatsApp.">
+  <title>Zeinshop313 - Toko Belanja Hemat Anda</title>
 
   <style>
     * {
@@ -14,463 +15,295 @@
 
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f5f7f2;
-      color: #263326;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f7f1;
+      color: #263528;
     }
 
-    header {
-      background: #176b3a;
+    /* HEADER UTAMA: SATU SAJA */
+    .header-toko {
+      background: linear-gradient(135deg, #064e3b, #087f5b);
       color: white;
-      text-align: center;
-      padding: 25px 12px;
+      padding: 20px 14px;
+      border-bottom: 5px solid #f4d477;
     }
 
-    header h1 {
-      margin-top: 0;
+    .identitas-toko {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      max-width: 760px;
+      margin: auto;
     }
 
-    .berjalan {
+    .foto-pemilik {
+      width: 94px;
+      height: 94px;
+      object-fit: cover;
+      object-position: center 35%;
+      border-radius: 50%;
+      border: 3px solid #f4d477;
+      flex-shrink: 0;
+      background: #e8e8e8;
+    }
+
+    .info-toko {
+      min-width: 0;
+    }
+
+    .logo-toko {
+      display: inline-block;
+      background: #f4d477;
+      color: #075c42;
+      font-size: 17px;
+      font-weight: bold;
+      padding: 6px 12px;
+      border-radius: 9px;
+    }
+
+    .logo-toko span {
+      color: #a34712;
+    }
+
+    .info-toko h1 {
+      margin: 8px 0 5px;
+      font-size: 25px;
+      line-height: 1.2;
+    }
+
+    .info-toko p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    /* TULISAN BERJALAN */
+    .marquee {
       overflow: hidden;
       white-space: nowrap;
-      background: #ffdf75;
-      color: #25351e;
-      padding: 12px 0;
+      background: #ffe082;
+      color: #25432d;
+      padding: 13px 0;
       font-weight: bold;
     }
 
-    .berjalan span {
+    .marquee span {
       display: inline-block;
       padding-left: 100%;
-      animation: jalan 15s linear infinite;
+      animation: berjalan 18s linear infinite;
     }
 
-    @keyframes jalan {
+    @keyframes berjalan {
       from { transform: translateX(0); }
       to { transform: translateX(-100%); }
     }
 
-    main {
-      max-width: 950px;
+    /* BAGIAN PRODUK */
+    .bagian-produk {
+      padding: 28px 16px 40px;
+      max-width: 1000px;
       margin: auto;
-      padding: 20px 14px;
     }
 
-    .produk-container {
+    .judul-produk {
+      text-align: center;
+      margin-bottom: 26px;
+    }
+
+    .judul-produk h2 {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .judul-produk p {
+      font-size: 17px;
+      line-height: 1.5;
+    }
+
+    .daftar-produk {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 20px;
     }
 
     .produk {
       background: white;
-      border-radius: 14px;
-      overflow: hidden;
-      box-shadow: 0 3px 12px #00000014;
-      padding-bottom: 18px;
+      border-radius: 16px;
+      padding: 15px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+      text-align: center;
     }
 
     .produk img {
-      display: block;
       width: 100%;
-      height: 260px;
+      height: 220px;
       object-fit: contain;
-      background: #fff;
-      padding: 10px;
-    }
-
-    .isi {
-      padding: 0 16px;
+      border-radius: 10px;
+      background: #f5f5f5;
     }
 
     .produk h3 {
-      color: #176b3a;
+      font-size: 21px;
+      margin: 15px 0 8px;
     }
 
     .harga {
-      font-size: 18px;
+      color: #087f5b;
+      font-size: 21px;
       font-weight: bold;
-      color: #c04a17;
+      margin: 10px 0 16px;
     }
 
-    .tombol {
+    .tombol-wa {
       display: block;
-      margin-top: 14px;
-      padding: 12px;
-      text-align: center;
-      background: #168347;
+      background: #159447;
       color: white;
-      border-radius: 8px;
       text-decoration: none;
+      padding: 13px 10px;
+      border-radius: 9px;
       font-weight: bold;
     }
 
-    .tombol:hover {
-      background: #105f32;
+    .tombol-wa:hover {
+      background: #0d7437;
+    }
+
+    .kontak {
+      background: #e4eee5;
+      text-align: center;
+      padding: 25px 15px;
+    }
+
+    .kontak a {
+      color: #087f5b;
+      font-weight: bold;
     }
 
     footer {
-      margin-top: 25px;
-      padding: 25px 12px;
-      background: #176b3a;
+      background: #064e3b;
       color: white;
       text-align: center;
+      padding: 18px 12px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 380px) {
+      .foto-pemilik {
+        width: 72px;
+        height: 72px;
+      }
+
+      .identitas-toko {
+        gap: 10px;
+      }
+
+      .info-toko h1 {
+        font-size: 20px;
+      }
+
+      .info-toko p {
+        font-size: 12px;
+      }
+
+      .judul-produk h2 {
+        font-size: 25px;
+      }
     }
   </style>
 </head>
 
-<!-- Efek letupan kertas warna-warni Zeinshop313 -->
-<style>
-  #confetti-toko {
-    position: fixed;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 9999;
-  }
-</style>
-
-<canvas id="confetti-toko"></canvas>
-
-<script>
-(function () {
-  const canvas = document.getElementById("confetti-toko");
-  const ctx = canvas.getContext("2d");
-
-  if (window.matchMedia(
-    "(prefers-reduced-motion: reduce)"
-  ).matches) {
-    canvas.remove();
-    return;
-  }
-
-  let pieces = [];
-  let animation;
-  const colors = [
-    "#ff1744",
-    "#ff9100",
-    "#ffea00",
-    "#00e676",
-    "#00b0ff",
-    "#d500f9",
-    "#ffffff"
-  ];
-
-  function resizeCanvas() {
-    const dpr = Math.min(window.devicePixelRatio || 1, 2);
-    canvas.width = window.innerWidth * dpr;
-    canvas.height = window.innerHeight * dpr;
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-  }
-
-  function burst(x, y, amount) {
-    for (let i = 0; i < amount; i++) {
-      const angle = Math.random() * Math.PI * 2;
-      const speed = 2 + Math.random() * 7;
-
-      pieces.push({
-        x: x,
-        y: y,
-        vx: Math.cos(angle) * speed,
-        vy: Math.sin(angle) * speed - 2,
-        size: 4 + Math.random() * 7,
-        color: colors[
-          Math.floor(Math.random() * colors.length)
-        ],
-        rotation: Math.random() * 6,
-        spin: (Math.random() - 0.5) * 0.25,
-        life: 100 + Math.random() * 50
-      });
-    }
-  }
-
-  function draw() {
-    ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
-
-    pieces = pieces.filter(p => p.life > 0);
-
-    pieces.forEach(p => {
-      p.x += p.vx;
-      p.y += p.vy;
-      p.vy += 0.12;
-      p.vx *= 0.99;
-      p.rotation += p.spin;
-      p.life--;
-
-      ctx.save();
-      ctx.translate(p.x, p.y);
-      ctx.rotate(p.rotation);
-      ctx.globalAlpha = Math.min(1, p.life / 25);
-      ctx.fillStyle = p.color;
-      ctx.fillRect(
-        -p.size / 2,
-        -p.size / 2,
-        p.size,
-        p.size * 0.65
-      );
-      ctx.restore();
-    });
-
-    if (pieces.length > 0) {
-      animation = requestAnimationFrame(draw);
-    } else {
-      ctx.clearRect(
-        0, 0, window.innerWidth, window.innerHeight
-      );
-      animation = null;
-    }
-  }
-
-  function launchConfetti() {
-    resizeCanvas();
-
-    const w = window.innerWidth;
-    const h = window.innerHeight;
-
-    // Dua letupan dari sisi kiri dan kanan
-    burst(w * 0.08, h * 0.45, 65);
-    burst(w * 0.92, h * 0.45, 65);
-
-    // Letupan tambahan dari tengah atas
-    burst(w * 0.5, h * 0.18, 45);
-
-    if (!animation) {
-      draw();
-    }
-  }
-
-  window.addEventListener("resize", resizeCanvas);
-  resizeCanvas();
-
-  // Efek otomatis saat website pertama kali dibuka
-  if (document.readyState === "complete") {
-    setTimeout(launchConfetti, 400);
-  } else {
-    window.addEventListener(
-      "load",
-      () => setTimeout(launchConfetti, 400),
-      { once: true }
-    );
-  }
-})();
-</script>
-</body>
-
 <body>
-  <header>
 
-<!-- HEADER ZEINSHOP313 -->
-<header class="header-toko">
-  <div class="identitas-toko">
-    <img
-      src="assets/profil-jafar.jpg"
-      alt="Pemilik Zeinshop313"
-      class="foto-pemilik"
-    >
+  <!-- HEADER: FOTO PEMILIK DAN LOGO TOKO -->
+  <header class="header-toko">
+    <div class="identitas-toko">
+      <img
+        class="foto-pemilik"
+        src="assets/profil-jafar.jpg"
+        alt="Foto pemilik Zeinshop313"
+      >
 
-    <div class="info-toko">
-      <div class="logo-toko">Z<span>313</span></div>
-      <h1>Zeinshop313</h1>
-      <p>Toko Belanja Hemat Anda</p>
+      <div class="info-toko">
+        <div class="logo-toko">Z<span>313</span></div>
+        <h1>Zeinshop313</h1>
+        <p>Toko Belanja Hemat Anda</p>
+      </div>
     </div>
-  </div>
-
-      <h1>Zeinshop313</h1>
-      <p>Toko Belanja Hemat Anda</p>
-    </div>
-  </div>
-</header>
-
-<style>
-  .header-toko {
-    background: linear-gradient(135deg, #064e3b, #087f5b);
-    color: white;
-    padding: 16px;
-    border-bottom: 4px solid #d4af37;
-  }
-
-  .identitas-toko {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-  }
-
-  .foto-pemilik {
-    width: 82px;
-    height: 82px;
-    object-fit: cover;
-    object-position: center 35%;
-    border-radius: 50%;
-    border: 3px solid #f4d477;
-    flex-shrink: 0;
-  }
-
-  .logo-toko {
-    display: inline-block;
-    background: #f4d477;
-    color: #064e3b;
-    font-size: 16px;
-    font-weight: bold;
-    padding: 4px 9px;
-    border-radius: 8px;
-    margin-bottom: 4px;
-  }
-
-  .logo-toko span {
-    color: #a34712;
-  }
-
-  .info-toko h1 {
-    margin: 2px 0;
-    font-size: 23px;
-  }
-
-  .info-toko p {
-    margin: 3px 0 0;
-    font-size: 13px;
-  }
-
-  @media (max-width: 360px) {
-    .foto-pemilik {
-      width: 66px;
-      height: 66px;
-    }
-
-    .info-toko h1 {
-      font-size: 19px;
-    }
-  }
-</style>
-
-</header>
-
-<style>
-  .header-toko {
-    background: linear-gradient(135deg, #064e3b, #087f5b);
-    color: white;
-    padding: 16px;
-    border-bottom: 4px solid #d4af37;
-  }
-
-  .identitas-toko {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-  }
-
-  : #a34712;
-  }
-
-  .info-toko h1 {
-    margin: 2px 0;
-    font-size: 23px;
-  }
-
-  .info-toko p {
-    margin: 3px 0 0;
-    font-size: 13px;
-  }
-
-  @media (max-width: 360px) {
-    .foto-pemilik {
-      width: 66px;
-      height: 66px;
-    }
-
-    .info-toko h1 {
-      font-size: 19px;
-    }
-  }
-</style>
-
-    <h1>Zeinshop313</h1>
-    <p>Toko Belanja Hemat Anda</p>
   </header>
 
-  <div class="berjalan">
-    <span>Selamat datang, Ahlan wa Sahlan di Toko Belanja Hemat Anda "Zeinshop313" — Belanja mudah, hemat, dan praktis!</span>
+  <!-- TULISAN BERJALAN -->
+  <div class="marquee">
+    <span>
+      Selamat datang, Ahlan wa Sahlan di Toko Belanja Hemat Anda "Zeinshop313" — Belanja mudah, hemat, dan praktis!
+    </span>
   </div>
 
-  <main>
-    <h2 style="text-align:center">Produk Pilihan Kami</h2>
-    <p style="text-align:center">
-      Silakan pilih produk dan pesan melalui WhatsApp.
-    </p>
+  <!-- PRODUK -->
+  <main class="bagian-produk">
+    <div class="judul-produk">
+      <h2>Produk Pilihan Kami</h2>
+      <p>Silakan pilih produk dan pesan melalui WhatsApp.</p>
+    </div>
 
-    <div class="produk-container">
+    <div class="daftar-produk">
 
-      <!-- PRODUK KOPI JAHE UMMI -->
-      <div class="produk">
+      <!-- PRODUK KOPI JAHE -->
+      <article class="produk">
         <img
-          src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?auto=format&fit=crop&w=800&q=85"
+          src="https://images.unsplash.com/photo-1559525839-b184a4d698c7?auto=format&fit=crop&w=600&q=80"
           alt="Kopi Jahe Sachet Ummi"
-          loading="eager"
-          onerror="this.onerror=null;this.src='https://placehold.co/400x400/f5f5f5/176b3a?text=Kopi+Jahe+Ummi';"
+          loading="lazy"
         >
 
-        <div class="isi">
-          <h3>Kopi Jahe Sachet Ummi</h3>
-          <p>Kopi jahe dalam kemasan sachet.</p>
+        <h3>Kopi Jahe Sachet Ummi</h3>
+        <p>Minuman kopi jahe untuk menemani waktu santai Anda.</p>
+        <div class="harga">Rp3.500 / sachet</div>
 
-          <p class="harga">Rp3.500 / sachet</p>
-
-          <a
-            class="tombol"
-            href="https://wa.me/6281991391551?text=Halo%20Zeinshop313%2C%20saya%20ingin%20pesan%20Kopi%20Jahe%20Ummi%20seharga%20Rp3.500%20per%20sachet."
-            target="_blank"
-            rel="noopener"
-          >
-            Pesan via WhatsApp
-          </a>
-        </div>
-      </div>
+        <a
+          class="tombol-wa"
+          href="https://wa.me/6281991391551?text=Assalamualaikum%2C%20saya%20ingin%20memesan%20Kopi%20Jahe%20Sachet%20Ummi."
+          target="_blank"
+          rel="noopener"
+        >Pesan via WhatsApp</a>
+      </article>
 
       <!-- PRODUK MINYAK WANGI MAHADIR -->
-      <div class="produk">
+      <article class="produk">
         <img
-          src="https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=800&q=85"
+          src="https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=600&q=80"
           alt="Minyak Wangi Mahadir"
-          loading="eager"
-          onerror="this.onerror=null;this.src='https://placehold.co/400x400/f5f5f5/176b3a?text=Minyak+Wangi+Mahadir';"
+          loading="lazy"
         >
 
-        <div class="isi">
-          <h3>Minyak Wangi Mahadir</h3>
-          <p>Minyak wangi pilihan untuk menemani aktivitas Anda.</p>
+        <h3>Minyak Wangi Mahadir</h3>
+        <p>Minyak wangi untuk melengkapi penampilan Anda.</p>
+        <div class="harga">Rp25.000 / botol</div>
 
-          <p class="harga">Rp25.000 / botol</p>
-
-          <a
-            class="tombol"
-            href="https://wa.me/6281991391551?text=Halo%20Zeinshop313%2C%20saya%20ingin%20pesan%20Minyak%20Wangi%20Mahadir%20seharga%20Rp25.000%20per%20botol."
-            target="_blank"
-            rel="noopener"
-          >
-            Pesan via WhatsApp
-          </a>
-        </div>
-      </div>
+        <a
+          class="tombol-wa"
+          href="https://wa.me/6281991391551?text=Assalamualaikum%2C%20saya%20ingin%20memesan%20Minyak%20Wangi%20Mahadir."
+          target="_blank"
+          rel="noopener"
+        >Pesan via WhatsApp</a>
+      </article>
 
     </div>
   </main>
 
-  <footer>
-    <h3>Hubungi Kami</h3>
-    <p>Ingin membeli produk kami? Silakan hubungi WhatsApp.</p>
-    <p>WhatsApp: 081991391551</p>
-
+  <!-- KONTAK -->
+  <section class="kontak">
+    <h2>Hubungi Kami</h2>
+    <p>Ingin bertanya atau memesan produk?</p>
     <a
-      class="tombol"
-      style="max-width:300px;margin:15px auto;background:#ffffff;color:#176b3a"
       href="https://wa.me/6281991391551"
       target="_blank"
       rel="noopener"
-    >
-      Chat WhatsApp Sekarang
-    </a>
+    >Chat WhatsApp Zeinshop313</a>
+  </section>
 
-    <p>© 2026 Zeinshop313. Terima kasih telah berbelanja.</p>
+  <footer>
+    <p>&copy; 2026 Zeinshop313. Toko Belanja Hemat Anda.</p>
   </footer>
+
 </body>
 </html>
