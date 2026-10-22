@@ -4,9 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Zeinshop313 - Toko Belanja Hemat</title>
-  <meta name="description" content="Belanja hemat dan mudah di Zeinshop313. Pesan produk melalui WhatsApp.">
+  <meta name="description" content="Belanja Kopi Jahe Ummi dan Minyak Wangi Mahadir di Zeinshop313.">
 
   <style>
     * {
@@ -16,295 +15,172 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #f5f8f6;
-      color: #222;
+      background: #f5f7f2;
+      color: #263326;
     }
 
-    /* Tulisan berjalan */
-    .running-banner {
-      background: #087f5b;
+    header {
+      background: #176b3a;
       color: white;
-      padding: 14px 0;
+      text-align: center;
+      padding: 25px 12px;
+    }
+
+    .berjalan {
       overflow: hidden;
       white-space: nowrap;
+      background: #ffdf75;
+      color: #25351e;
+      padding: 12px 0;
       font-weight: bold;
     }
 
-    .running-text {
+    .berjalan span {
       display: inline-block;
       padding-left: 100%;
-      animation: berjalan 20s linear infinite;
+      animation: jalan 15s linear infinite;
     }
 
-    @keyframes berjalan {
+    @keyframes jalan {
       from { transform: translateX(0); }
       to { transform: translateX(-100%); }
     }
 
-    header {
-      background: white;
-      text-align: center;
-      padding: 25px 12px;
-      border-bottom: 3px solid #087f5b;
-    }
-
-    header h1 {
-      margin: 0 0 8px;
-      color: #087f5b;
-      font-size: 30px;
-    }
-
-    header p {
-      margin: 5px 0;
-      color: #555;
-    }
-
-    .judul {
-      text-align: center;
-      color: #087f5b;
-      margin: 28px 10px 12px;
-    }
-
-    .subjudul {
-      text-align: center;
-      color: #666;
-      font-size: 14px;
-      padding: 0 12px;
-    }
-
-    .produk-list {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 15px;
-      max-width: 900px;
-      padding: 15px;
+    main {
+      max-width: 950px;
       margin: auto;
+      padding: 20px 14px;
+    }
+
+    .produk-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 20px;
     }
 
     .produk {
       background: white;
       border-radius: 14px;
       overflow: hidden;
-      box-shadow: 0 3px 12px rgba(0,0,0,.09);
-      text-align: center;
+      box-shadow: 0 3px 12px #00000014;
       padding-bottom: 18px;
     }
 
-    .gambar-produk {
+    .produk img {
+      display: block;
       width: 100%;
-      height: 220px;
+      height: 260px;
+      object-fit: contain;
+      background: #fff;
       padding: 10px;
-      background: white;
     }
 
-    .gambar-produk img {
-      width: 100%;
-      height: 100%;
-      display: block;
-      object-fit: contain;
+    .isi {
+      padding: 0 16px;
     }
 
     .produk h3 {
-      font-size: 17px;
-      margin: 12px 5px;
-    }
-
-    .deskripsi {
-      color: #666;
-      font-size: 13px;
-      padding: 0 10px;
-      min-height: 34px;
+      color: #176b3a;
     }
 
     .harga {
-      color: #087f5b;
       font-size: 18px;
       font-weight: bold;
-      margin: 12px 4px;
+      color: #c04a17;
     }
 
-    .tombol-wa {
-      display: inline-block;
-      background: #20c766;
-      color: #083b20;
-      text-decoration: none;
-      padding: 11px 12px;
-      margin: 5px;
-      border-radius: 8px;
-      font-size: 13px;
-      font-weight: bold;
-    }
-
-    .tombol-wa:hover {
-      background: #18ad55;
-    }
-
-    .kontak {
-      background: #e5f6eb;
+    .tombol {
+      display: block;
+      margin-top: 14px;
+      padding: 12px;
       text-align: center;
-      padding: 25px 15px;
-      margin-top: 20px;
-      line-height: 1.7;
+      background: #168347;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
     }
 
     footer {
-      background: #173b30;
+      margin-top: 25px;
+      padding: 25px 12px;
+      background: #176b3a;
       color: white;
       text-align: center;
-      padding: 18px 10px;
-      font-size: 13px;
-    }
-
-    @media (max-width: 480px) {
-      .produk-list {
-        gap: 10px;
-        padding: 10px;
-      }
-
-      .gambar-produk {
-        height: 150px;
-      }
-
-      .produk h3 {
-        font-size: 14px;
-      }
-
-      .harga {
-        font-size: 15px;
-      }
-
-      .tombol-wa {
-        padding: 10px 7px;
-        font-size: 11px;
-      }
-
-      header h1 {
-        font-size: 26px;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .running-text {
-        animation: none;
-        padding-left: 10px;
-        white-space: normal;
-      }
-
-      .running-banner {
-        white-space: normal;
-      }
     }
   </style>
 </head>
 
 <body>
-
-  <!-- Tulisan berjalan di bagian atas -->
-  <div class="running-banner">
-    <div class="running-text">
-      Selamat datang, Ahlan wa Sahlan di Toko Belanja Hemat Anda
-      "Zeinshop313" — Semoga Berkah, Belanja Hemat dan Praktis!
-    </div>
-  </div>
-
-  <!-- Nama toko -->
   <header>
     <h1>Zeinshop313</h1>
     <p>Toko Belanja Hemat Anda</p>
-    <p>Belanja mudah, hemat, dan praktis!</p>
   </header>
 
-  <h2 class="judul">Produk Pilihan Kami</h2>
-  <p class="subjudul">Silakan pilih produk dan pesan melalui WhatsApp.</p>
+  <div class="berjalan">
+    <span>Selamat datang, Ahlan wa Sahlan di Toko Belanja Hemat Anda "Zeinshop313" — Belanja mudah, hemat, dan praktis!</span>
+  </div>
 
-  <main class="produk-list">
+  <main>
+    <h2 style="text-align:center">Produk Pilihan Kami</h2>
+    <p style="text-align:center">Silakan pilih produk dan pesan melalui WhatsApp.</p>
 
-    <!-- Produk Kopi Jahe Sachet Ummi -->
-    <article class="produk">
-      <div class="gambar-produk">
+    <div class="produk-container">
+
+      <!-- PRODUK KOPI JAHE -->
+      <div class="produk">
         <img
-          <!-- Minyak Wangi Mahadir -->
-<img
-  src="
-
-<!-- Kopi Jahe Sachet Ummi -->
-<img
-  src="Kopi-Jahe-Ummi.jpg"
-  alt="Kopi Jahe Sachet Ummi"
-  loading="eager"
->
-          onerror="this.onerror=null;this.src='https://placehold.co/400x400/f5f5f5/333333?text=Foto+Kopi+Jahe';"
+          src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?auto=format&fit=crop&w=800&q=85"
+          alt="Kopi Jahe Sachet Ummi"
+          loading="eager"
+          onerror="this.onerror=null;this.src='https://placehold.co/600x400/f5f5f5/176b3a?text=Kopi+Jahe+Ummi';"
         >
+        <div class="isi">
+          <h3>Kopi Jahe Sachet Ummi</h3>
+          <p>Kopi jahe dalam kemasan sachet.</p>
+          <p class="harga">Hubungi untuk harga</p>
+          <a class="tombol"
+             href="https://wa.me/6281991391551?text=Halo%20Zeinshop313%2C%20saya%20ingin%20pesan%20Kopi%20Jahe%20Ummi"
+             target="_blank" rel="noopener">
+            Pesan via WhatsApp
+          </a>
+        </div>
       </div>
 
-      <h3>Kopi Jahe Sachet Ummi</h3>
-      <p class="deskripsi">
-        Kopi jahe dalam kemasan sachet.
-      </p>
-      <p class="harga">Hubungi untuk harga</p>
-
-      <a
-        class="tombol-wa"
-        href="https://wa.me/6281991391551?text=Assalamualaikum%2C%20saya%20ingin%20bertanya%20tentang%20Kopi%20Jahe%20Sachet%20Ummi."
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Pesan via WhatsApp
-      </a>
-    </article>
-
-    <!-- Produk Minyak Wangi Mahadir -->
-    <article class="produk">
-      <div class="gambar-produk">
+      <!-- PRODUK MINYAK WANGI MAHADIR -->
+      <div class="produk">
         <img
-        <!-- Minyak Wangi Mahadir -->
-<img
-  src="Mahadir.jpg"
-  alt="Minyak Wangi Mahadir"
-  loading="eager"
->
->
-          onerror="this.onerror=null;this.src='https://placehold.co/400x400/f5f5f5/333333?text=Foto+Mahadir';"
+          src="https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=800&q=85"
+          alt="Minyak Wangi Mahadir"
+          loading="eager"
+          onerror="this.onerror=null;this.src='https://placehold.co/600x400/f5f5f5/176b3a?text=Minyak+Wangi+Mahadir';"
         >
+        <div class="isi">
+          <h3>Minyak Wangi Mahadir</h3>
+          <p>Minyak wangi pilihan untuk menemani aktivitas Anda.</p>
+          <p class="harga">Rp25.000 / botol</p>
+          <a class="tombol"
+             href="https://wa.me/6281991391551?text=Halo%20Zeinshop313%2C%20saya%20ingin%20pesan%20Minyak%20Wangi%20Mahadir"
+             target="_blank" rel="noopener">
+            Pesan via WhatsApp
+          </a>
+        </div>
       </div>
 
-      <h3>Minyak Wangi Mahadir</h3>
-      <p class="deskripsi">
-        Minyak wangi pilihan untuk menemani aktivitas Anda.
-      </p>
-      <p class="harga">Rp25.000 / botol</p>
-
-      <a
-        class="tombol-wa"
-        href="https://wa.me/6281991391551?text=Assalamualaikum%2C%20saya%20ingin%20memesan%20Minyak%20Wangi%20Mahadir."
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Pesan via WhatsApp
-      </a>
-    </article>
-
+    </div>
   </main>
 
-  <!-- Kontak toko -->
-  <section class="kontak">
-    <h2>Hubungi Kami</h2>
+  <footer>
+    <h3>Hubungi Kami</h3>
     <p>Ingin membeli produk kami? Silakan hubungi WhatsApp.</p>
-    <p><strong>WhatsApp: 081991391551</strong></p>
-
-    <a
-      class="tombol-wa"
-      href="https://wa.me/6281991391551"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
+    <p>WhatsApp: 081991391551</p>
+    <a class="tombol"
+       style="max-width:300px;margin:15px auto;background:#ffffff;color:#176b3a"
+       href="https://wa.me/6281991391551"
+       target="_blank" rel="noopener">
       Chat WhatsApp Sekarang
     </a>
-  </section>
-
-  <footer>
-    <p>&copy; 2026 Zeinshop313. Terima kasih telah berbelanja.</p>
+    <p>© 2026 Zeinshop313. Terima kasih telah berbelanja.</p>
   </footer>
-
 </body>
 </html>
