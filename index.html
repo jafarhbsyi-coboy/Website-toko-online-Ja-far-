@@ -275,6 +275,85 @@
       <p>Toko Belanja Hemat Anda</p>
     </div>
   </div>
+
+<!-- HEADER ZEINSHOP313 -->
+<header class="header-toko">
+  <div class="identitas-toko">
+    <img
+      src="assets/profil-jafar.jpg"
+      alt="Pemilik Zeinshop313"
+      class="foto-pemilik"
+    >
+
+    <div class="info-toko">
+      <div class="logo-toko">Z<span>313</span></div>
+      <h1>Zeinshop313</h1>
+      <p>Toko Belanja Hemat Anda</p>
+    </div>
+  </div>
+</header>
+
+<style>
+  .header-toko {
+    background: linear-gradient(135deg, #064e3b, #087f5b);
+    color: white;
+    padding: 16px;
+    border-bottom: 4px solid #d4af37;
+  }
+
+  .identitas-toko {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .foto-pemilik {
+    width: 82px;
+    height: 82px;
+    object-fit: cover;
+    object-position: center 35%;
+    border-radius: 50%;
+    border: 3px solid #f4d477;
+    flex-shrink: 0;
+  }
+
+  .logo-toko {
+    display: inline-block;
+    background: #f4d477;
+    color: #064e3b;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 4px 9px;
+    border-radius: 8px;
+    margin-bottom: 4px;
+  }
+
+  .logo-toko span {
+    color: #a34712;
+  }
+
+  .info-toko h1 {
+    margin: 2px 0;
+    font-size: 23px;
+  }
+
+  .info-toko p {
+    margin: 3px 0 0;
+    font-size: 13px;
+  }
+
+  @media (max-width: 360px) {
+    .foto-pemilik {
+      width: 66px;
+      height: 66px;
+    }
+
+    .info-toko h1 {
+      font-size: 19px;
+    }
+  }
+</style>
+
 </header>
 
 <style>
