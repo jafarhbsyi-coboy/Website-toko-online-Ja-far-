@@ -5,7 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#075c42">
-  <title>Zeinshop313 - Toko Belanja Hemat Anda</title>
+  <meta name="description" content="Zeinshop313 - Toko Belanja Hemat Anda">
+  <title>Zeinshop313 | Toko Belanja Hemat Anda</title>
 
   <style>
     * {
@@ -19,39 +20,22 @@
       color: #263528;
     }
 
-    /* HEADER SEDERHANA TANPA LOGO DAN FOTO */
-    .header-toko {
-      background: linear-gradient(135deg, #064e3b, #087f5b);
-      color: white;
-      text-align: center;
-      padding: 35px 15px;
-      border-bottom: 5px solid #f4d477;
-    }
-
-    .header-toko h1 {
-      margin: 0 0 12px;
-      font-size: 34px;
-    }
-
-    .header-toko p {
-      margin: 0;
-      font-size: 19px;
-    }
-
-    /* TULISAN BERJALAN */
+    /* TULISAN BERJALAN TANPA HEADER DAN LOGO */
     .marquee {
+      width: 100%;
       overflow: hidden;
       white-space: nowrap;
-      background: #ffe082;
-      color: #25432d;
-      padding: 13px 0;
+      background: #075c42;
+      color: #fff;
+      padding: 17px 0;
       font-weight: bold;
+      border-bottom: 4px solid #f4d477;
     }
 
     .marquee span {
       display: inline-block;
       padding-left: 100%;
-      animation: berjalan 18s linear infinite;
+      animation: berjalan 20s linear infinite;
     }
 
     @keyframes berjalan {
@@ -59,11 +43,10 @@
       to { transform: translateX(-100%); }
     }
 
-    /* DAFTAR PRODUK */
     .bagian-produk {
-      padding: 28px 16px 40px;
       max-width: 1000px;
       margin: auto;
+      padding: 28px 16px 40px;
     }
 
     .judul-produk {
@@ -72,12 +55,13 @@
     }
 
     .judul-produk h2 {
-      font-size: 30px;
-      margin-bottom: 10px;
+      font-size: 28px;
+      margin: 0 0 10px;
+      color: #075c42;
     }
 
     .judul-produk p {
-      font-size: 17px;
+      font-size: 16px;
       line-height: 1.5;
     }
 
@@ -88,14 +72,15 @@
     }
 
     .produk {
-      background: white;
-      border-radius: 16px;
+      background: #fff;
+      border-radius: 15px;
       padding: 15px;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
       text-align: center;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
     }
 
     .produk img {
+      display: block;
       width: 100%;
       height: 220px;
       object-fit: contain;
@@ -108,17 +93,21 @@
       margin: 15px 0 8px;
     }
 
+    .produk p {
+      line-height: 1.5;
+    }
+
     .harga {
       color: #087f5b;
       font-size: 21px;
       font-weight: bold;
-      margin: 10px 0 16px;
+      margin: 14px 0 17px;
     }
 
     .tombol-wa {
       display: block;
       background: #159447;
-      color: white;
+      color: #fff;
       text-decoration: none;
       padding: 13px 10px;
       border-radius: 9px;
@@ -135,6 +124,10 @@
       padding: 25px 15px;
     }
 
+    .kontak h2 {
+      color: #075c42;
+    }
+
     .kontak a {
       color: #087f5b;
       font-weight: bold;
@@ -142,23 +135,19 @@
 
     footer {
       background: #064e3b;
-      color: white;
+      color: #fff;
       text-align: center;
       padding: 18px 12px;
       font-size: 14px;
     }
 
     @media (max-width: 380px) {
-      .header-toko h1 {
-        font-size: 29px;
-      }
-
-      .header-toko p {
-        font-size: 16px;
-      }
-
       .judul-produk h2 {
-        font-size: 25px;
+        font-size: 24px;
+      }
+
+      .produk img {
+        height: 190px;
       }
     }
   </style>
@@ -166,28 +155,24 @@
 
 <body>
 
-  <!-- SATU HEADER SAJA -->
-  <header class="header-toko">
-    <h1>Zeinshop313</h1>
-    <p>Toko Belanja Hemat Anda</p>
-  </header>
-
-  <!-- TULISAN BERJALAN -->
+  <!-- BAGIAN PALING ATAS: HANYA TULISAN BERJALAN -->
   <div class="marquee">
     <span>
       Selamat datang, Ahlan wa Sahlan di Toko Belanja Hemat Anda "Zeinshop313" — Belanja mudah, hemat, dan praktis!
     </span>
   </div>
 
-  <!-- PRODUK -->
+  <!-- DAFTAR PRODUK -->
   <main class="bagian-produk">
+
     <div class="judul-produk">
       <h2>Produk Pilihan Kami</h2>
-      <p>Silakan pilih produk dan pesan melalui WhatsApp.</p>
+      <p>Pilih produk yang Anda inginkan dan pesan melalui WhatsApp.</p>
     </div>
 
     <div class="daftar-produk">
 
+      <!-- KOPI JAHE SACHET UMMI -->
       <article class="produk">
         <img
           src="https://images.unsplash.com/photo-1559525839-b184a4d698c7?auto=format&fit=crop&w=600&q=80"
@@ -197,6 +182,7 @@
 
         <h3>Kopi Jahe Sachet Ummi</h3>
         <p>Minuman kopi jahe untuk menemani waktu santai Anda.</p>
+
         <div class="harga">Rp3.500 / sachet</div>
 
         <a
@@ -207,6 +193,7 @@
         >Pesan via WhatsApp</a>
       </article>
 
+      <!-- MINYAK WANGI MAHADIR -->
       <article class="produk">
         <img
           src="https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=600&q=80"
@@ -216,6 +203,7 @@
 
         <h3>Minyak Wangi Mahadir</h3>
         <p>Minyak wangi untuk melengkapi penampilan Anda.</p>
+
         <div class="harga">Rp25.000 / botol</div>
 
         <a
@@ -229,7 +217,7 @@
     </div>
   </main>
 
-  <!-- KONTAK -->
+  <!-- KONTAK TOKO -->
   <section class="kontak">
     <h2>Hubungi Kami</h2>
     <p>Ingin bertanya atau memesan produk?</p>
