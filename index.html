@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -23,8 +24,6 @@ body {
   white-space: nowrap;
   padding: 13px 0;
   font-weight: bold;
-  text-shadow: -2px -2px white, 2px 2px white,
-               -2px 2px white, 2px -2px white;
 }
 
 .running span {
@@ -47,8 +46,7 @@ header {
 header h1, header p {
   color: orange;
   font-weight: bold;
-  text-shadow: -2px -2px white, 2px 2px white,
-               -2px 2px white, 2px -2px white;
+  text-shadow: none;
 }
 
 header h1 { margin: 0 0 10px; }
@@ -59,7 +57,10 @@ header h1 { margin: 0 0 10px; }
   padding: 12px;
 }
 
-h2 { text-align: center; color: #075E36; }
+h2 {
+  text-align: center;
+  color: #075E36;
+}
 
 .products {
   display: grid;
@@ -115,7 +116,7 @@ button, .btn {
 .small {
   background: #eee;
   color: #222;
-  padding: 5px 10px;
+  padding: 7px 12px;
 }
 
 .checkout {
@@ -163,7 +164,6 @@ footer {
   text-align: center;
   padding: 18px;
   font-weight: bold;
-  text-shadow: -1px -1px white, 1px 1px white;
 }
 
 @media(max-width: 480px) {
@@ -200,12 +200,12 @@ footer {
   <article class="product">
     <img
       src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=500&q=80"
-      alt="Ilustrasi kopi"
-      onerror="this.src='https://placehold.co/300x250?text=Kopi+Jahe'"
+      alt="Ilustrasi kopi jahe"
+      onerror="this.onerror=null;this.src='https://placehold.co/300x250?text=Kopi+Jahe';"
     >
     <h3>Kopi Jahe Sachet Ummi</h3>
-    <p class="price">Rp15.000 <small>(harga contoh)</small></p>
-    <button class="add" onclick="addToCart('kopi')">
+    <p class="price">Rp15.000 (harga contoh)</p>
+    <button type="button" class="add" onclick="addToCart('kopi')">
       + Tambah ke Keranjang
     </button>
   </article>
@@ -214,11 +214,11 @@ footer {
     <img
       src="https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=500&q=80"
       alt="Ilustrasi minyak wangi"
-      onerror="this.src='https://placehold.co/300x250?text=Minyak+Wangi'"
+      onerror="this.onerror=null;this.src='https://placehold.co/300x250?text=Minyak+Wangi';"
     >
     <h3>Minyak Wangi Mahadir</h3>
     <p class="price">Rp25.000</p>
-    <button class="add" onclick="addToCart('mahadir')">
+    <button type="button" class="add" onclick="addToCart('mahadir')">
       + Tambah ke Keranjang
     </button>
   </article>
@@ -226,35 +226,31 @@ footer {
 </div>
 
 <section class="panel" id="keranjang">
-  <h2>🛒 Keranjang Belanja</h2>
+  <h2>🛒 Keranjang Belanja (<span id="cart-count">0</span>)</h2>
   <div id="cart-items">Keranjang masih kosong.</div>
   <p class="total">Subtotal: <span id="subtotal">Rp0</span></p>
-  <p class="note">
-    Ongkos kirim belum termasuk. Harga kopi pada halaman ini
-    adalah contoh dan harus disesuaikan dengan harga jual Anda.
-  </p>
+  <button type="button" class="small" onclick="clearCart()">
+    Kosongkan Keranjang
+  </button>
 </section>
 
 <section class="panel" id="checkout">
   <h2>📦 Checkout Pesanan</h2>
 
   <form id="order-form">
-
     <label for="nama">Nama lengkap penerima</label>
-    <input id="nama" name="nama" required
-           placeholder="Masukkan nama lengkap">
+    <input id="nama" required placeholder="Nama lengkap">
 
     <label for="telepon">Nomor WhatsApp pembeli</label>
-    <input id="telepon" name="telepon" type="tel"
-           required placeholder="Contoh: 08123456789">
+    <input id="telepon" type="tel" required placeholder="08123456789">
 
-    <label for="alamat">Alamat lengkap pengiriman</label>
-    <textarea id="alamat" name="alamat" rows="3" required
-      placeholder="Jalan, nomor rumah, desa, kecamatan, kota, provinsi, kode pos"></textarea>
+    <label for="alamat">Alamat lengkap</label>
+    <textarea id="alamat" rows="3" required
+      placeholder="Jalan, desa, kecamatan, kota, provinsi, kode pos"></textarea>
 
-    <label for="kurir">Pilih jasa kurir</label>
-    <select id="kurir" name="kurir" required>
-      <option value="">-- Pilih jasa kurir --</option>
+    <label for="kurir">Jasa kurir</label>
+    <select id="kurir" required>
+      <option value="">-- Pilih kurir --</option>
       <option>JNE</option>
       <option>J&T Express</option>
       <option>SiCepat</option>
@@ -272,37 +268,33 @@ footer {
     </select>
 
     <label for="pengiriman">Jenis pengiriman</label>
-    <select id="pengiriman" name="pengiriman" required>
-      <option value="Reguler">Reguler (konfirmasi ketersediaan)</option>
-      <option value="Express">Express (konfirmasi ketersediaan)</option>
-      <option value="Same Day">Same Day (jika tersedia)</option>
-      <option value="Instant">Instant (jika tersedia)</option>
+    <select id="pengiriman" required>
+      <option>Reguler</option>
+      <option>Express</option>
+      <option>Same Day (jika tersedia)</option>
+      <option>Instant (jika tersedia)</option>
     </select>
 
-    <label for="pembayaran">Metode pembayaran</label>
-    <select id="pembayaran" name="pembayaran" required>
-      <option value="COD">COD - Bayar di Tempat</option>
+    <label for="pembayaran">Pembayaran</label>
+    <select id="pembayaran" required>
+      <option value="COD - Bayar di Tempat">COD - Bayar di Tempat</option>
     </select>
 
-    <label for="catatan">Catatan pesanan (opsional)</label>
-    <textarea id="catatan" name="catatan" rows="2"
-      placeholder="Contoh: patokan rumah atau jumlah barang"></textarea>
+    <label for="catatan">Catatan (opsional)</label>
+    <textarea id="catatan" rows="2"
+      placeholder="Catatan pesanan"></textarea>
 
     <button type="submit" class="checkout">
-      Checkout dan Kirim Pesanan ke WhatsApp
+      Checkout melalui WhatsApp
     </button>
-
   </form>
 </section>
 
-<section class="note">
-  <strong>Informasi COD dan kurir:</strong><br>
-  Pilihan kurir di atas tidak berarti semua kurir tersedia di setiap
-  wilayah atau mendukung COD untuk semua pengirim. Konfirmasikan
-  ongkos kirim, cakupan layanan, dan syarat COD terlebih dahulu.
-  Pesanan belum otomatis dibukukan atau dikirim sebelum penjual
-  menyetujuinya.
-</section>
+<div class="note">
+  Harga kopi masih contoh. Silakan sesuaikan dengan harga sebenarnya.
+  Ongkir, ketersediaan kurir, dan layanan COD perlu dikonfirmasi
+  sebelum pesanan disetujui.
+</div>
 
 </main>
 
@@ -313,10 +305,6 @@ footer {
 <script>
 const WA_PENJUAL = "6281991391551";
 
-/*
-  GANTI HARGA KOPI DI BAWAH INI DENGAN HARGA JUAL YANG BENAR.
-  Harga saat ini hanya contoh.
-*/
 const products = {
   kopi: {
     name: "Kopi Jahe Sachet Ummi",
@@ -330,24 +318,30 @@ const products = {
 
 const cart = {};
 
-function rupiah(number) {
-  return "Rp" + number.toLocaleString("id-ID");
+function rupiah(n) {
+  return "Rp" + n.toLocaleString("id-ID");
 }
 
+/* Tombol tambah produk ke keranjang */
 function addToCart(id) {
-  if (!cart[id]) cart[id] = 0;
-  cart[id]++;
+  if (!products[id]) return;
+
+  cart[id] = (cart[id] || 0) + 1;
   renderCart();
 
-  document.getElementById("keranjang").scrollIntoView({
-    behavior: "smooth",
-    block: "start"
-  });
+  const button = document.getElementById("keranjang");
+  button.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
 function changeQty(id, amount) {
-  cart[id] = (cart[id] || 0) + amount;
-  if (cart[id] <= 0) delete cart[id];
+  if (!cart[id]) return;
+
+  cart[id] += amount;
+
+  if (cart[id] <= 0) {
+    delete cart[id];
+  }
+
   renderCart();
 }
 
@@ -356,24 +350,31 @@ function deleteItem(id) {
   renderCart();
 }
 
+function clearCart() {
+  Object.keys(cart).forEach(id => delete cart[id]);
+  renderCart();
+}
+
+/* Perbarui daftar barang dan total setiap kali ada perubahan */
 function renderCart() {
   const area = document.getElementById("cart-items");
   const ids = Object.keys(cart);
   let subtotal = 0;
+  let jumlahBarang = 0;
+
+  area.replaceChildren();
 
   if (ids.length === 0) {
     area.textContent = "Keranjang masih kosong.";
-    document.getElementById("subtotal").textContent = "Rp0";
-    return;
   }
-
-  area.replaceChildren();
 
   ids.forEach(id => {
     const product = products[id];
     const qty = cart[id];
-    const lineTotal = product.price * qty;
-    subtotal += lineTotal;
+    const total = product.price * qty;
+
+    subtotal += total;
+    jumlahBarang += qty;
 
     const row = document.createElement("div");
     row.className = "cart-row";
@@ -383,8 +384,7 @@ function renderCart() {
 
     const detail = document.createElement("p");
     detail.textContent =
-      rupiah(product.price) + " × " + qty + " = " +
-      rupiah(lineTotal);
+      rupiah(product.price) + " × " + qty + " = " + rupiah(total);
 
     const minus = document.createElement("button");
     minus.type = "button";
@@ -411,15 +411,18 @@ function renderCart() {
     area.appendChild(row);
   });
 
+  document.getElementById("cart-count").textContent = jumlahBarang;
   document.getElementById("subtotal").textContent = rupiah(subtotal);
 }
 
+/* Checkout: kirim rincian pesanan ke WhatsApp penjual */
 document.getElementById("order-form").addEventListener("submit", function(e) {
   e.preventDefault();
 
   const ids = Object.keys(cart);
+
   if (ids.length === 0) {
-    alert("Silakan tambahkan produk ke keranjang terlebih dahulu.");
+    alert("Keranjang kosong. Tambahkan produk terlebih dahulu.");
     return;
   }
 
@@ -438,24 +441,24 @@ document.getElementById("order-form").addEventListener("submit", function(e) {
     const p = products[id];
     const total = p.price * cart[id];
     subtotal += total;
+
     daftar += "- " + p.name + " x " + cart[id] +
       " = " + rupiah(total) + "\n";
   });
 
   const pesan =
-    "HALO ZEINSHOP313, SAYA INGIN CHECKOUT PESANAN\n\n" +
+    "PESANAN BARU - ZEINSHOP313\n\n" +
     "Nama: " + nama + "\n" +
     "WhatsApp pembeli: " + telepon + "\n" +
     "Alamat: " + alamat + "\n\n" +
-    "PESANAN:\n" + daftar +
+    "Daftar pesanan:\n" + daftar +
     "\nSubtotal barang: " + rupiah(subtotal) +
-    "\nOngkir: Mohon konfirmasi" +
+    "\nOngkir: konfirmasi dahulu" +
     "\nKurir: " + kurir +
-    "\nPengiriman: " + pengiriman +
+    "\nJenis pengiriman: " + pengiriman +
     "\nPembayaran: " + pembayaran +
     "\nCatatan: " + (catatan || "-") +
-    "\n\nMohon konfirmasi stok, ongkir, dan ketersediaan COD. " +
-    "Saya menunggu persetujuan pesanan.";
+    "\n\nMohon konfirmasi stok, ongkir, dan layanan COD.";
 
   const url = "https://wa.me/" + WA_PENJUAL +
     "?text=" + encodeURIComponent(pesan);
