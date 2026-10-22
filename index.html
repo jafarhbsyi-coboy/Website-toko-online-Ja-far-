@@ -5,7 +5,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#075c42">
-  <meta name="description" content="Zeinshop313 - Toko Belanja Hemat Anda. Pesan produk melalui WhatsApp.">
   <title>Zeinshop313 - Toko Belanja Hemat Anda</title>
 
   <style>
@@ -20,61 +19,23 @@
       color: #263528;
     }
 
-    /* HEADER UTAMA: SATU SAJA */
+    /* HEADER SEDERHANA TANPA LOGO DAN FOTO */
     .header-toko {
       background: linear-gradient(135deg, #064e3b, #087f5b);
       color: white;
-      padding: 20px 14px;
+      text-align: center;
+      padding: 35px 15px;
       border-bottom: 5px solid #f4d477;
     }
 
-    .identitas-toko {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 14px;
-      max-width: 760px;
-      margin: auto;
+    .header-toko h1 {
+      margin: 0 0 12px;
+      font-size: 34px;
     }
 
-    .foto-pemilik {
-      width: 94px;
-      height: 94px;
-      object-fit: cover;
-      object-position: center 35%;
-      border-radius: 50%;
-      border: 3px solid #f4d477;
-      flex-shrink: 0;
-      background: #e8e8e8;
-    }
-
-    .info-toko {
-      min-width: 0;
-    }
-
-    .logo-toko {
-      display: inline-block;
-      background: #f4d477;
-      color: #075c42;
-      font-size: 17px;
-      font-weight: bold;
-      padding: 6px 12px;
-      border-radius: 9px;
-    }
-
-    .logo-toko span {
-      color: #a34712;
-    }
-
-    .info-toko h1 {
-      margin: 8px 0 5px;
-      font-size: 25px;
-      line-height: 1.2;
-    }
-
-    .info-toko p {
+    .header-toko p {
       margin: 0;
-      font-size: 14px;
+      font-size: 19px;
     }
 
     /* TULISAN BERJALAN */
@@ -98,7 +59,7 @@
       to { transform: translateX(-100%); }
     }
 
-    /* BAGIAN PRODUK */
+    /* DAFTAR PRODUK */
     .bagian-produk {
       padding: 28px 16px 40px;
       max-width: 1000px;
@@ -188,21 +149,12 @@
     }
 
     @media (max-width: 380px) {
-      .foto-pemilik {
-        width: 72px;
-        height: 72px;
+      .header-toko h1 {
+        font-size: 29px;
       }
 
-      .identitas-toko {
-        gap: 10px;
-      }
-
-      .info-toko h1 {
-        font-size: 20px;
-      }
-
-      .info-toko p {
-        font-size: 12px;
+      .header-toko p {
+        font-size: 16px;
       }
 
       .judul-produk h2 {
@@ -214,21 +166,10 @@
 
 <body>
 
-  <!-- HEADER: FOTO PEMILIK DAN LOGO TOKO -->
+  <!-- SATU HEADER SAJA -->
   <header class="header-toko">
-    <div class="identitas-toko">
-      <img
-        class="foto-pemilik"
-        src="assets/profil-jafar.jpg"
-        alt="Foto pemilik Zeinshop313"
-      >
-
-      <div class="info-toko">
-        <div class="logo-toko">Z<span>313</span></div>
-        <h1>Zeinshop313</h1>
-        <p>Toko Belanja Hemat Anda</p>
-      </div>
-    </div>
+    <h1>Zeinshop313</h1>
+    <p>Toko Belanja Hemat Anda</p>
   </header>
 
   <!-- TULISAN BERJALAN -->
@@ -247,7 +188,6 @@
 
     <div class="daftar-produk">
 
-      <!-- PRODUK KOPI JAHE -->
       <article class="produk">
         <img
           src="https://images.unsplash.com/photo-1559525839-b184a4d698c7?auto=format&fit=crop&w=600&q=80"
@@ -267,7 +207,6 @@
         >Pesan via WhatsApp</a>
       </article>
 
-      <!-- PRODUK MINYAK WANGI MAHADIR -->
       <article class="produk">
         <img
           src="https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=600&q=80"
@@ -294,6 +233,7 @@
   <section class="kontak">
     <h2>Hubungi Kami</h2>
     <p>Ingin bertanya atau memesan produk?</p>
+
     <a
       href="https://wa.me/6281991391551"
       target="_blank"
